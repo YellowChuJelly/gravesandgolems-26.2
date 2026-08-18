@@ -1,0 +1,13 @@
+{
+  "itemGroup.gravesandgolems": "Graves and Golems",
+  "block.gravesandgolems.example_block": "Example Block",
+  "item.gravesandgolems.example_item": "Example Item",
+  "gravesandgolems.container.bucket":  "Bucket",
+  "gravesandgolems.configuration.title": "Graves And Golems Configs",
+  "gravesandgolems.configuration.section.gravesandgolems.common.toml": "Graves And Golems Configs",
+  "gravesandgolems.configuration.section.gravesandgolems.common.toml.title": "Graves And Golems Configs",
+  "gravesandgolems.configuration.items": "Item List",
+  "gravesandgolems.configuration.logDirtBlock": "Log Dirt Block",
+  "gravesandgolems.configuration.magicNumberIntroduction": "Magic Number Text",
+  "gravesandgolems.configuration.magicNumber": "Magic Number"
+}

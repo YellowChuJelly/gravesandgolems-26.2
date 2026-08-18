@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "net.redchujelly.gravesandgolems.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "BaseFireBlockMixin",
+    "BrushableBlockEntityInvoker",
+    "BrushItemMixin"
+  ],
+  "mixinextras": {
+    "minVersion": "0.5.4"
+  },
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

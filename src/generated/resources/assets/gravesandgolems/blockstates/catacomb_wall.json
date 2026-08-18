@@ -1,0 +1,148 @@
+{
+  "variants": {
+    "facing=east,lit=false": [
+      {
+        "model": "gravesandgolems:block/catacomb_wall",
+        "weight": 10,
+        "y": 90
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_1",
+        "y": 90
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_2",
+        "y": 90
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_3",
+        "y": 90
+      }
+    ],
+    "facing=east,lit=true": [
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_0",
+        "weight": 10,
+        "y": 90
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_1",
+        "y": 90
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_2",
+        "y": 90
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_3",
+        "y": 90
+      }
+    ],
+    "facing=north,lit=false": [
+      {
+        "model": "gravesandgolems:block/catacomb_wall",
+        "weight": 10
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_1"
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_2"
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_3"
+      }
+    ],
+    "facing=north,lit=true": [
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_0",
+        "weight": 10
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_1"
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_2"
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_3"
+      }
+    ],
+    "facing=south,lit=false": [
+      {
+        "model": "gravesandgolems:block/catacomb_wall",
+        "weight": 10,
+        "y": 180
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_1",
+        "y": 180
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_2",
+        "y": 180
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_3",
+        "y": 180
+      }
+    ],
+    "facing=south,lit=true": [
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_0",
+        "weight": 10,
+        "y": 180
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_1",
+        "y": 180
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_2",
+        "y": 180
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_3",
+        "y": 180
+      }
+    ],
+    "facing=west,lit=false": [
+      {
+        "model": "gravesandgolems:block/catacomb_wall",
+        "weight": 10,
+        "y": 270
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_1",
+        "y": 270
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_2",
+        "y": 270
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_3",
+        "y": 270
+      }
+    ],
+    "facing=west,lit=true": [
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_0",
+        "weight": 10,
+        "y": 270
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_1",
+        "y": 270
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_2",
+        "y": 270
+      },
+      {
+        "model": "gravesandgolems:block/catacomb_wall_lit_3",
+        "y": 270
+      }
+    ]
+  }
+}

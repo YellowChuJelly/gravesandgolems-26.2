@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "curtain_part=bottom,facing=east": {
+      "model": "gravesandgolems:block/sea_silk_curtain_bottom",
+      "y": 90
+    },
+    "curtain_part=bottom,facing=north": {
+      "model": "gravesandgolems:block/sea_silk_curtain_bottom"
+    },
+    "curtain_part=bottom,facing=south": {
+      "model": "gravesandgolems:block/sea_silk_curtain_bottom",
+      "y": 180
+    },
+    "curtain_part=bottom,facing=west": {
+      "model": "gravesandgolems:block/sea_silk_curtain_bottom",
+      "y": 270
+    },
+    "curtain_part=middle,facing=east": {
+      "model": "gravesandgolems:block/sea_silk_curtain_middle",
+      "y": 90
+    },
+    "curtain_part=middle,facing=north": {
+      "model": "gravesandgolems:block/sea_silk_curtain_middle"
+    },
+    "curtain_part=middle,facing=south": {
+      "model": "gravesandgolems:block/sea_silk_curtain_middle",
+      "y": 180
+    },
+    "curtain_part=middle,facing=west": {
+      "model": "gravesandgolems:block/sea_silk_curtain_middle",
+      "y": 270
+    },
+    "curtain_part=single,facing=east": {
+      "model": "gravesandgolems:block/sea_silk_curtain",
+      "y": 90
+    },
+    "curtain_part=single,facing=north": {
+      "model": "gravesandgolems:block/sea_silk_curtain"
+    },
+    "curtain_part=single,facing=south": {
+      "model": "gravesandgolems:block/sea_silk_curtain",
+      "y": 180
+    },
+    "curtain_part=single,facing=west": {
+      "model": "gravesandgolems:block/sea_silk_curtain",
+      "y": 270
+    },
+    "curtain_part=top,facing=east": {
+      "model": "gravesandgolems:block/sea_silk_curtain_top",
+      "y": 90
+    },
+    "curtain_part=top,facing=north": {
+      "model": "gravesandgolems:block/sea_silk_curtain_top"
+    },
+    "curtain_part=top,facing=south": {
+      "model": "gravesandgolems:block/sea_silk_curtain_top",
+      "y": 180
+    },
+    "curtain_part=top,facing=west": {
+      "model": "gravesandgolems:block/sea_silk_curtain_top",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gravesandgolems:block/catacomb_wall_1"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "gravesandgolems:block/sea_silk_curtain_bottom",
+    "side": "gravesandgolems:block/sea_silk_curtain",
+    "top": "gravesandgolems:block/sea_silk_curtain_toptop"
+  }
+}

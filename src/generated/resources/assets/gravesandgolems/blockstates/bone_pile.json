@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "lit=false": [
+      {
+        "model": "gravesandgolems:block/bone_pile",
+        "weight": 2
+      },
+      {
+        "model": "gravesandgolems:block/bone_pile_1",
+        "weight": 5
+      }
+    ],
+    "lit=true": [
+      {
+        "model": "gravesandgolems:block/bone_pile_lit_1",
+        "weight": 2
+      },
+      {
+        "model": "gravesandgolems:block/bone_pile_lit_2",
+        "weight": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+package net.redchujelly.gravesandgolems.registry;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.CreativeModeTab;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.redchujelly.gravesandgolems.GravesAndGolems;
+
+public class CreativeTabRegistry {
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GravesAndGolems.MODID);
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("graves_and_golems_tab", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.gravesandgolems"))
+            .icon(() -> BlockRegistry.GRAVE_DIRT.get().asItem().getDefaultInstance())
+            .displayItems((parameters, output) -> {
+                output.accept(BlockRegistry.BONE_PILE.get());
+                output.accept(BlockRegistry.CATACOMB_WALL.get());
+                output.accept(BlockRegistry.GRAVE_DIRT.get());
+                output.accept(BlockRegistry.SEA_SILK_BLOCK.get());
+                output.accept(ItemRegistry.SEA_SILK.get());
+                output.accept(BlockRegistry.SEA_SILK_FABRIC_BLOCK.get());
+                output.accept(ItemRegistry.SEA_SILK_FABRIC.get());
+                output.accept(BlockRegistry.SEA_SILK_CURTAIN.get());
+                output.accept(ItemRegistry.RED_VELVET_FABRIC.get());
+                output.accept(BlockRegistry.RED_VELVET_BLOCK.get());
+                output.accept(BlockRegistry.RED_VELVET_CURTAIN.get());
+                output.accept(BlockRegistry.GILDED_RED_VELVET_CURTAIN.get());
+                output.accept(BlockRegistry.ALEX_FIGURINE.get());
+                output.accept(BlockRegistry.STEVE_FIGURINE.get());
+                output.accept(BlockRegistry.BLACK_CAT_FIGURINE.get());
+                output.accept(ItemRegistry.TROWEL.get());
+
+            }).build());
+
+    public static void register(IEventBus eventBus){
+        CREATIVE_MODE_TABS.register(eventBus);
+    }
+}
+

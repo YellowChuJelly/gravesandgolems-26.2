@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gravesandgolems:block/figurine_alex",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gravesandgolems:block/figurine_alex"
+    },
+    "facing=south": {
+      "model": "gravesandgolems:block/figurine_alex",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gravesandgolems:block/figurine_alex",
+      "y": 270
+    }
+  }
+}

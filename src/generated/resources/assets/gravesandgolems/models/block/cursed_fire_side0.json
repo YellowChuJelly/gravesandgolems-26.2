@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fire_side",
+  "textures": {
+    "fire": "gravesandgolems:block/cursed_fire_0"
+  }
+}

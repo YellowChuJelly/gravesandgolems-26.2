@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 20.0,
+                "min": 5.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "gravesandgolems:sea_silk",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravesandgolems:figurine_steve",
+          "quality": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravesandgolems:figurine_alex",
+          "quality": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravesandgolems:figurine_black_cat",
+          "quality": 3
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "gravesandgolems:suspicious_grave_dirt_loot_table"
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "gravesandgolems:block/red_velvet_curtain_gold_bottom",
+    "side": "gravesandgolems:block/red_velvet_curtain_gold_top",
+    "top": "gravesandgolems:block/red_velvet_curtain_toptop"
+  }
+}

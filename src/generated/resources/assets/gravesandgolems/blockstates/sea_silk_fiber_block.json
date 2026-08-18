@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gravesandgolems:block/sea_silk_fiber_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gravesandgolems:block/sea_silk_fiber_block"
+    },
+    "facing=south": {
+      "model": "gravesandgolems:block/sea_silk_fiber_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gravesandgolems:block/sea_silk_fiber_block",
+      "y": 270
+    }
+  }
+}
