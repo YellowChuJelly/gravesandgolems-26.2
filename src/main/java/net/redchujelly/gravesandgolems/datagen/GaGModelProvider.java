@@ -59,27 +59,6 @@ public class GaGModelProvider extends ModelProvider {
                 )
         );
 
-        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(BlockRegistry.SEA_SILK_CURTAIN.get())
-                .with(PropertyDispatch.initial(CurtainBlock.CURTAIN_PART, BlockStateProperties.HORIZONTAL_FACING)
-                        .select(CurtainBlock.CurtainPart.TOP, Direction.NORTH, curtainsTop)
-                        .select(CurtainBlock.CurtainPart.TOP, Direction.SOUTH, curtainsTop.with(Y_ROT_180))
-                        .select(CurtainBlock.CurtainPart.TOP, Direction.EAST, curtainsTop.with(Y_ROT_90))
-                        .select(CurtainBlock.CurtainPart.TOP, Direction.WEST, curtainsTop.with(Y_ROT_270))
-                        .select(CurtainBlock.CurtainPart.BOTTOM, Direction.NORTH, curtainsBot)
-                        .select(CurtainBlock.CurtainPart.BOTTOM, Direction.SOUTH, curtainsBot.with(Y_ROT_180))
-                        .select(CurtainBlock.CurtainPart.BOTTOM, Direction.EAST, curtainsBot.with(Y_ROT_90))
-                        .select(CurtainBlock.CurtainPart.BOTTOM, Direction.WEST, curtainsBot.with(Y_ROT_270))
-                        .select(CurtainBlock.CurtainPart.MIDDLE, Direction.NORTH, curtainsMid)
-                        .select(CurtainBlock.CurtainPart.MIDDLE, Direction.SOUTH, curtainsMid.with(Y_ROT_180))
-                        .select(CurtainBlock.CurtainPart.MIDDLE, Direction.EAST, curtainsMid.with(Y_ROT_90))
-                        .select(CurtainBlock.CurtainPart.MIDDLE, Direction.WEST, curtainsMid.with(Y_ROT_270))
-                        .select(CurtainBlock.CurtainPart.SINGLE, Direction.NORTH, curtainsSgl)
-                        .select(CurtainBlock.CurtainPart.SINGLE, Direction.SOUTH, curtainsSgl.with(Y_ROT_180))
-                        .select(CurtainBlock.CurtainPart.SINGLE, Direction.EAST, curtainsSgl.with(Y_ROT_90))
-                        .select(CurtainBlock.CurtainPart.SINGLE, Direction.WEST, curtainsSgl.with(Y_ROT_270))
-                )
-        );
-
         MultiVariant litCatacombs = new MultiVariant(WeightedList.of(
                 new Weighted<>((BlockModelGenerators.plainModel(blockModels.createSuffixedVariant(BlockRegistry.CATACOMB_WALL.get(), "_lit_0", ModelTemplates.CUBE_ALL, TextureMapping::cube))), 10),
                 new Weighted<>((BlockModelGenerators.plainModel(blockModels.createSuffixedVariant(BlockRegistry.CATACOMB_WALL.get(), "_lit_1", ModelTemplates.CUBE_ALL, TextureMapping::cube))), 1),
