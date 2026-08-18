@@ -88,6 +88,28 @@ public class GaGModelProvider extends ModelProvider {
         MultiVariant curtainsMid = plainVariant(blockModels.createSuffixedVariant(BlockRegistry.SEA_SILK_CURTAIN.get(), "_middle", ModelTemplates.CUBE_BOTTOM_TOP, m -> new TextureMapping().put(TextureSlot.SIDE, simpleMaterial("sea_silk_curtain")).put(TextureSlot.BOTTOM, simpleMaterial("sea_silk_curtain_bottom")).put(TextureSlot.TOP, simpleMaterial("sea_silk_curtain_toptop"))));
         MultiVariant curtainsTop = plainVariant(blockModels.createSuffixedVariant(BlockRegistry.SEA_SILK_CURTAIN.get(), "_top", ModelTemplates.CUBE_BOTTOM_TOP, m -> new TextureMapping().put(TextureSlot.SIDE, simpleMaterial("sea_silk_curtain_top")).put(TextureSlot.TOP, simpleMaterial("sea_silk_curtain_toptop")).put(TextureSlot.BOTTOM, simpleMaterial("sea_silk_curtain_bottom"))));
         MultiVariant curtainsSgl = plainVariant(blockModels.createSuffixedVariant(BlockRegistry.SEA_SILK_CURTAIN.get(), "", ModelTemplates.CUBE_BOTTOM_TOP, m -> new TextureMapping().put(TextureSlot.SIDE, simpleMaterial("sea_silk_curtain_single")).put(TextureSlot.TOP, simpleMaterial("sea_silk_curtain_toptop")).put(TextureSlot.BOTTOM, simpleMaterial("sea_silk_curtain_bottom"))));
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(BlockRegistry.SEA_SILK_CURTAIN.get())
+                .with(PropertyDispatch.initial(CurtainBlock.CURTAIN_PART, BlockStateProperties.HORIZONTAL_FACING)
+                        .select(CurtainBlock.CurtainPart.TOP, Direction.NORTH, curtainsTop)
+                        .select(CurtainBlock.CurtainPart.TOP, Direction.SOUTH, curtainsTop.with(Y_ROT_180))
+                        .select(CurtainBlock.CurtainPart.TOP, Direction.EAST, curtainsTop.with(Y_ROT_90))
+                        .select(CurtainBlock.CurtainPart.TOP, Direction.WEST, curtainsTop.with(Y_ROT_270))
+                        .select(CurtainBlock.CurtainPart.BOTTOM, Direction.NORTH, curtainsBot)
+                        .select(CurtainBlock.CurtainPart.BOTTOM, Direction.SOUTH, curtainsBot.with(Y_ROT_180))
+                        .select(CurtainBlock.CurtainPart.BOTTOM, Direction.EAST, curtainsBot.with(Y_ROT_90))
+                        .select(CurtainBlock.CurtainPart.BOTTOM, Direction.WEST, curtainsBot.with(Y_ROT_270))
+                        .select(CurtainBlock.CurtainPart.MIDDLE, Direction.NORTH, curtainsMid)
+                        .select(CurtainBlock.CurtainPart.MIDDLE, Direction.SOUTH, curtainsMid.with(Y_ROT_180))
+                        .select(CurtainBlock.CurtainPart.MIDDLE, Direction.EAST, curtainsMid.with(Y_ROT_90))
+                        .select(CurtainBlock.CurtainPart.MIDDLE, Direction.WEST, curtainsMid.with(Y_ROT_270))
+                        .select(CurtainBlock.CurtainPart.SINGLE, Direction.NORTH, curtainsSgl)
+                        .select(CurtainBlock.CurtainPart.SINGLE, Direction.SOUTH, curtainsSgl.with(Y_ROT_180))
+                        .select(CurtainBlock.CurtainPart.SINGLE, Direction.EAST, curtainsSgl.with(Y_ROT_90))
+                        .select(CurtainBlock.CurtainPart.SINGLE, Direction.WEST, curtainsSgl.with(Y_ROT_270))
+                )
+        );
+
+
         MultiVariant susBones = new MultiVariant(WeightedList.of(
                 new Weighted<>((BlockModelGenerators.plainModel(blockModels.createSuffixedVariant(BlockRegistry.SUSPICIOUS_BONE_PILE.get(), "_1_0", ModelTemplates.CUBE_ALL, TextureMapping::cube))), 2),
                 new Weighted<>((BlockModelGenerators.plainModel(blockModels.createSuffixedVariant(BlockRegistry.SUSPICIOUS_BONE_PILE.get(), "_2_0", ModelTemplates.CUBE_ALL, TextureMapping::cube))), 5)
