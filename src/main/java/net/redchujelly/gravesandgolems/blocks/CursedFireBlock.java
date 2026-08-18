@@ -48,7 +48,7 @@ public class CursedFireBlock extends BaseFireBlock {
     }
 
     public static boolean canSurviveOnBlock(BlockState state) {
-        return state.is(BlockRegistry.CATACOMB_WALL.get()) || state.is(BlockRegistry.BONE_PILE.get());
+        return state.is(BlockRegistry.CATACOMB_WALL.get()) || state.is(BlockRegistry.BONE_PILE.get()) || state.is(BlockRegistry.SUSPICIOUS_BONE_PILE.get());
     }
 
     @Override

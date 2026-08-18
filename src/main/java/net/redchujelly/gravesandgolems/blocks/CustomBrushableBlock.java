@@ -69,13 +69,13 @@ public class CustomBrushableBlock extends BaseEntityBlock {
         if (var6 instanceof CustomBrushableBlockEntity brushableBlockEntity) {
             brushableBlockEntity.checkReset(level);
         }
+    }
 
 //        if (FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinY()) {
 //            FallingBlockEntity entity = FallingBlockEntity.fall(level, pos, state);
 //            entity.disableDrop();
 //        }
 
-    }
 //
 //    public void onBrokenAfterFall(Level level, BlockPos pos, FallingBlockEntity entity) {
 //        Vec3 centerOfEntity = entity.getBoundingBox().getCenter();

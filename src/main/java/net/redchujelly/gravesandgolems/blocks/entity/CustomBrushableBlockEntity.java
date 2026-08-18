@@ -34,6 +34,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.redchujelly.gravesandgolems.GravesAndGolems;
+import net.redchujelly.gravesandgolems.blocks.BrushableBonePileBlock;
 import net.redchujelly.gravesandgolems.blocks.CustomBrushableBlock;
 import net.redchujelly.gravesandgolems.registry.BlockEntityRegistry;
 import org.jspecify.annotations.Nullable;
@@ -133,8 +134,13 @@ public class CustomBrushableBlockEntity extends BlockEntity {
             } else {
                 turnsInto = Blocks.AIR;
             }
+            BlockState toTurn = turnsInto.defaultBlockState();
+            if (var7 instanceof BrushableBonePileBlock){
+                boolean shouldLight = this.getBlockState().getValue(BlockStateProperties.LIT);
+                toTurn = toTurn.setValue(BlockStateProperties.LIT, shouldLight);
+            }
 
-            level.setBlock(this.worldPosition, turnsInto.defaultBlockState(), 3);
+            level.setBlock(this.worldPosition, toTurn, 3);
         }
 
         public void dropContent(ServerLevel level, LivingEntity user, ItemStack brush) {

@@ -26,13 +26,13 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> BONE_PILE = registerBlock("bone_pile",
             properties -> new BonePileBlock(new ColorRGBA(0), properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.DEEPSLATE_BRICKS)));
     public static final DeferredBlock<Block> SUSPICIOUS_BONE_PILE = registerBlock("suspicious_bone_pile",
-            properties -> new BonePileBlock(new ColorRGBA(0), properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.DEEPSLATE_BRICKS)));
+            properties -> new BrushableBonePileBlock(BlockRegistry.BONE_PILE.get(), SoundEvents.BRUSH_GRAVEL, SoundEvents.BRUSH_GRAVEL_COMPLETED, properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).strength(1F).sound(SoundType.SUSPICIOUS_GRAVEL).sound(SoundType.DEEPSLATE_BRICKS)));
     public static final DeferredBlock<Block> CATACOMB_WALL = registerBlock("catacomb_wall",
             properties -> new CatacombWallBlock(properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.DEEPSLATE_BRICKS)));
     public static final DeferredBlock<Block> GRAVE_DIRT = registerBlock("grave_dirt",
             properties -> new Block(properties.mapColor(MapColor.DIRT).strength(0.5F).sound(SoundType.GRAVEL)));
     public static final DeferredBlock<Block> SUSPICIOUS_GRAVE_DIRT = registerBlock("suspicious_grave_dirt",
-            properties -> new CustomBrushableBlock(BlockRegistry.GRAVE_DIRT.get(), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED, properties.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_GRAVEL).pushReaction(PushReaction.DESTROY)));
+            properties -> new CustomBrushableBlock(BlockRegistry.GRAVE_DIRT.get(), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED, properties.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> SEA_SILK_BLOCK = registerBlock("sea_silk_fiber_block",
             properties -> new CustomHorizontalBlock(properties.mapColor(DyeColor.YELLOW).instrument(NoteBlockInstrument.GUITAR).strength(0.8F).sound(SoundType.WOOL).ignitedByLava()));
     public static final DeferredBlock<Block> SEA_SILK_FABRIC_BLOCK = registerBlock("sea_silk_block",
