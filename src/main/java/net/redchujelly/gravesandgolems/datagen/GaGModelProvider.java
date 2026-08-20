@@ -221,6 +221,7 @@ public class GaGModelProvider extends ModelProvider {
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.ALEX_FIGURINE.get(), "figurine_alex");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.STEVE_FIGURINE.get(), "figurine_steve");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.BLACK_CAT_FIGURINE.get(), "figurine_black_cat");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DIRT_BUCKET.get(), "dirt_bucket");
 
                 MultiVariant floorFireModels = blockModels.createFloorFireModels(BlockRegistry.CURSED_FIRE.get());
         MultiVariant sideFireModels = blockModels.createSideFireModels(BlockRegistry.CURSED_FIRE.get());

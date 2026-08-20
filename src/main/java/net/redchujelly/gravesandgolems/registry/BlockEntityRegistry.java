@@ -6,6 +6,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.redchujelly.gravesandgolems.GravesAndGolems;
 import net.redchujelly.gravesandgolems.blocks.entity.CustomBrushableBlockEntity;
+import net.redchujelly.gravesandgolems.blocks.entity.DirtBucketBlockEntity;
 
 import java.util.function.Supplier;
 
@@ -14,6 +15,9 @@ public class BlockEntityRegistry {
 
     public static final Supplier<BlockEntityType<CustomBrushableBlockEntity>> CUSTOM_BRUSHABLE_BE = BLOCK_ENTITIES.register(
             "custom_brushable_be", () -> new BlockEntityType<>(CustomBrushableBlockEntity::new, BlockRegistry.SUSPICIOUS_GRAVE_DIRT.get(), BlockRegistry.SUSPICIOUS_BONE_PILE.get()));
+
+    public static final Supplier<BlockEntityType<DirtBucketBlockEntity>> DIRT_BUCKET_BE = BLOCK_ENTITIES.register(
+            "dirt_bucket_be", () -> new BlockEntityType<>(DirtBucketBlockEntity::new, BlockRegistry.DIRT_BUCKET.get()));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

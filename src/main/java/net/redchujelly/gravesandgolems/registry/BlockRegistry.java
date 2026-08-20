@@ -1,11 +1,14 @@
 package net.redchujelly.gravesandgolems.registry;
 
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -14,6 +17,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.redchujelly.gravesandgolems.GravesAndGolems;
 import net.redchujelly.gravesandgolems.blocks.*;
+import net.redchujelly.gravesandgolems.items.DirtBucketBlockItem;
 
 import java.util.function.Function;
 
@@ -24,9 +28,9 @@ public class BlockRegistry {
 
 
     public static final DeferredBlock<Block> BONE_PILE = registerBlock("bone_pile",
-            properties -> new BonePileBlock(new ColorRGBA(0), properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.DEEPSLATE_BRICKS)));
+            properties -> new BonePileBlock(new ColorRGBA(0), properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.DEEPSLATE_BRICKS).lightLevel(p -> p.getValue(BlockStateProperties.LIT) ? 5 : 0)));
     public static final DeferredBlock<Block> SUSPICIOUS_BONE_PILE = registerBlock("suspicious_bone_pile",
-            properties -> new BrushableBonePileBlock(BlockRegistry.BONE_PILE.get(), SoundEvents.BRUSH_GRAVEL, SoundEvents.BRUSH_GRAVEL_COMPLETED, properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).strength(1F).sound(SoundType.SUSPICIOUS_GRAVEL).sound(SoundType.DEEPSLATE_BRICKS)));
+            properties -> new BrushableBonePileBlock(BlockRegistry.BONE_PILE.get(), SoundEvents.BRUSH_GRAVEL, SoundEvents.BRUSH_GRAVEL_COMPLETED, properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).strength(1F).sound(SoundType.SUSPICIOUS_GRAVEL).sound(SoundType.DEEPSLATE_BRICKS).lightLevel(p -> p.getValue(BlockStateProperties.LIT) ? 5 : 0)));
     public static final DeferredBlock<Block> CATACOMB_WALL = registerBlock("catacomb_wall",
             properties -> new CatacombWallBlock(properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.DEEPSLATE_BRICKS)));
     public static final DeferredBlock<Block> GRAVE_DIRT = registerBlock("grave_dirt",
@@ -55,15 +59,36 @@ public class BlockRegistry {
             properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
     public static final DeferredBlock<Block> BLACK_CAT_FIGURINE = registerBlock("figurine_black_cat",
             properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+    public static final DeferredBlock<Block> DIRT_BUCKET = registerDirtBucketBlock("dirt_bucket",
+            properties -> new DirtBucketBlock(properties.strength(1.5f).sound(SoundType.BAMBOO).noOcclusion()));
 
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
         BLOCK_ITEMS.registerItem(name, properties -> new BlockItem(block.get(), properties.useBlockDescriptionPrefix()));
     }
+    private static <T extends Block> void registerDirtBlockItem(String name, DeferredBlock<T> block){
+        BLOCK_ITEMS.registerItem(name, properties -> new DirtBucketBlockItem(block.get(), properties.useBlockDescriptionPrefix().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY).stacksTo(1)));
+    }
+
+    private static <T extends Block> void registerBlockItemStacksTo(String name, DeferredBlock<T> block, int stacksTo){
+        BLOCK_ITEMS.registerItem(name, properties -> new BlockItem(block.get(), properties.useBlockDescriptionPrefix().stacksTo(stacksTo)));
+    }
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function){
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);
         registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> DeferredBlock<T> registerDirtBucketBlock(String name, Function<BlockBehaviour.Properties, T> function){
+        DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);
+        registerDirtBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> DeferredBlock<T> registerBlockStacksTo(String name, Function<BlockBehaviour.Properties, T> function, int stacksTo){
+        DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);
+        registerBlockItemStacksTo(name, toReturn, stacksTo);
         return toReturn;
     }
 

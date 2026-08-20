@@ -8,6 +8,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.redchujelly.gravesandgolems.datagen.GaGModelProvider;
+import net.redchujelly.gravesandgolems.datagen.GaGTagsProvider;
+import net.redchujelly.gravesandgolems.datagen.loot.GaGBlockLootSubProvider;
 import net.redchujelly.gravesandgolems.datagen.loot.GaGLootTableSubProvider;
 
 import java.util.List;
@@ -21,10 +23,12 @@ public class GravesAndGolemsDatagen {
         PackOutput output = generator.getPackOutput();
 
         generator.addProvider(true, new GaGModelProvider(output));
+        event.createProvider(GaGTagsProvider::new);
 
         event.createProvider((output1, lookupProvider) -> new LootTableProvider(
                 output, Set.of(), List.of(
-                        new LootTableProvider.SubProviderEntry(GaGLootTableSubProvider::new, LootContextParamSets.ARCHAEOLOGY)
+                        new LootTableProvider.SubProviderEntry(GaGLootTableSubProvider::new, LootContextParamSets.ARCHAEOLOGY),
+                        new LootTableProvider.SubProviderEntry(GaGBlockLootSubProvider::new, LootContextParamSets.BLOCK)
         ), lookupProvider
         ));
     }

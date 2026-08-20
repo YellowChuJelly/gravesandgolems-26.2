@@ -8,6 +8,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
@@ -15,8 +16,10 @@ import net.redchujelly.gravesandgolems.blocks.entity.CustomBrushableBlockRendere
 import net.redchujelly.gravesandgolems.client.particle.GaGParticleProvider;
 import net.redchujelly.gravesandgolems.entity.GolemEntityModel;
 import net.redchujelly.gravesandgolems.entity.GolemEntityRenderer;
+import net.redchujelly.gravesandgolems.menu.DirtBucketScreen;
 import net.redchujelly.gravesandgolems.registry.BlockEntityRegistry;
 import net.redchujelly.gravesandgolems.registry.EntityTypesRegistry;
+import net.redchujelly.gravesandgolems.registry.MenuTypeRegistry;
 import net.redchujelly.gravesandgolems.registry.ParticleTypesRegistry;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
@@ -57,6 +60,10 @@ public class GravesAndGolemsClient {
         event.registerBlockEntityRenderer(
                 BlockEntityRegistry.CUSTOM_BRUSHABLE_BE.get(), CustomBrushableBlockRenderer::new
         );
+    }
 
+    @SubscribeEvent
+    public static void registerScreens(RegisterMenuScreensEvent event){
+        event.register(MenuTypeRegistry.DIRT_BUCKET_MENU.get(), DirtBucketScreen::new);
     }
 }

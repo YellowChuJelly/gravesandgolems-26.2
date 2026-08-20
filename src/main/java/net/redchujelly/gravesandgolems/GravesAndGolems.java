@@ -1,6 +1,9 @@
 package net.redchujelly.gravesandgolems;
 
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.redchujelly.gravesandgolems.blocks.entity.DirtBucketBlockEntity;
 import net.redchujelly.gravesandgolems.entity.GolemEntity;
 import net.redchujelly.gravesandgolems.registry.*;
 import org.slf4j.Logger;
@@ -35,11 +38,13 @@ public class GravesAndGolems {
         EntityTypesRegistry.register(modEventBus);
         CreativeTabRegistry.register(modEventBus);
         ParticleTypesRegistry.register(modEventBus);
+        MenuTypeRegistry.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
         modEventBus.addListener(this::createDefaultAttributes);
+        modEventBus.addListener(CapabilitiesRegistry::registerCapabilities);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -62,5 +67,4 @@ public class GravesAndGolems {
     public void onServerStarting(ServerStartingEvent event) {
 
     }
-
 }

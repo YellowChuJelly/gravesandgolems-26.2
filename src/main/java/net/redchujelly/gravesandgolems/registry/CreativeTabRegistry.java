@@ -31,6 +31,7 @@ public class CreativeTabRegistry {
                 output.accept(BlockRegistry.STEVE_FIGURINE.get());
                 output.accept(BlockRegistry.BLACK_CAT_FIGURINE.get());
                 output.accept(ItemRegistry.TROWEL.get());
+                output.accept(BlockRegistry.DIRT_BUCKET.get());
 
             }).build());
 
