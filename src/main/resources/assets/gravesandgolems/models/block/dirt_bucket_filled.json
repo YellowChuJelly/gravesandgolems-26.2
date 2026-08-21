@@ -3,7 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [8, 8],
 	"textures": {
-		"1": "gravesandgolems:block/dirt_bucket"
+		"1": "gravesandgolems:block/dirt_bucket",
+		"particle": "gravesandgolems:block/dirt_bucket"
 	},
 	"elements": [
 		{
@@ -120,7 +121,7 @@
 			"rotation": {"x": 90, "y": 45, "z": 90, "origin": [7.90662, 6.67984, 11]},
 			"faces": {
 				"north": {"uv": [0, 14, 5.5, 14.5], "texture": "#1"},
-				"east": {"uv": [5, 14.5, 5.5, 15], "rotation": 90, "texture": "#1"},
+				"east": {"uv": [6.5, 13.5, 7, 14], "rotation": 90, "texture": "#1"},
 				"south": {"uv": [0, 13.5, 5.5, 14], "texture": "#1"},
 				"west": {"uv": [5, 14.5, 5.5, 15], "rotation": 90, "texture": "#1"}
 			}
@@ -131,7 +132,7 @@
 			"rotation": {"x": 90, "y": 45, "z": 90, "origin": [7.90662, 6.67984, 11]},
 			"faces": {
 				"north": {"uv": [0, 14, 5.5, 14.5], "texture": "#1"},
-				"east": {"uv": [5, 14.5, 5.5, 15], "rotation": 90, "texture": "#1"},
+				"east": {"uv": [6.5, 13.5, 7, 14], "rotation": 90, "texture": "#1"},
 				"south": {"uv": [0, 13.5, 5.5, 14], "texture": "#1"},
 				"west": {"uv": [5, 14.5, 5.5, 15], "rotation": 90, "texture": "#1"}
 			}

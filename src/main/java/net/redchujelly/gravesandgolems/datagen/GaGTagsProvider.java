@@ -26,10 +26,12 @@ public class GaGTagsProvider extends ItemTagsProvider {
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "suspicious_grave_dirt")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "suspicious_bone_pile")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "bone_pile")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "catacomb_wall")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "figurine_steve")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "figurine_alex")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "figurine_black_cat")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "trowel")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sea_silk")));
 
         this.tag(ItemRegistry.DIRT_BUCKET_PLACEABLES)
