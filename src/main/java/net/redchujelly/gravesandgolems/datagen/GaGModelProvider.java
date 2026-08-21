@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.redchujelly.gravesandgolems.GravesAndGolems;
 import net.redchujelly.gravesandgolems.blocks.CurtainBlock;
+import net.redchujelly.gravesandgolems.blocks.ScreeningTableBlock;
 import net.redchujelly.gravesandgolems.registry.BlockRegistry;
 import net.redchujelly.gravesandgolems.registry.ItemRegistry;
 
@@ -222,8 +223,15 @@ public class GaGModelProvider extends ModelProvider {
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.STEVE_FIGURINE.get(), "figurine_steve");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.BLACK_CAT_FIGURINE.get(), "figurine_black_cat");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DIRT_BUCKET.get(), "dirt_bucket");
+//        registerCustomModelBlock(blockModels, itemModels, BlockRegistry.SCREENING_TABLE.get(), "screening_table");
 
-                MultiVariant floorFireModels = blockModels.createFloorFireModels(BlockRegistry.CURSED_FIRE.get());
+        blockModels.blockStateOutput.accept(
+                MultiPartGenerator.multiPart(BlockRegistry.SCREENING_TABLE.get())
+                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/sifting_particles")))
+                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/screening_table")))
+                        .with(condition().term(ScreeningTableBlock.SIFTING, false), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/screening_table"))));
+
+        MultiVariant floorFireModels = blockModels.createFloorFireModels(BlockRegistry.CURSED_FIRE.get());
         MultiVariant sideFireModels = blockModels.createSideFireModels(BlockRegistry.CURSED_FIRE.get());
         blockModels.blockStateOutput
                 .accept(
@@ -245,5 +253,11 @@ public class GaGModelProvider extends ModelProvider {
         MultiVariant model = plainVariant(modelLoc);
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, model).with(ROTATION_HORIZONTAL_FACING));
         itemModels.generateFlatItem(block.asItem(), ModelTemplates.FLAT_ITEM);
+    }
+    private void registerCustomModelBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block, String name){
+        Identifier modelLoc = modLocation("block/" + name);
+        MultiVariant model = plainVariant(modelLoc);
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, model));
+        itemModels.declareCustomModelItem(block.asItem());
     }
 }

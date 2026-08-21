@@ -3,7 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "E:/blockbenchwork/archaeology/fin/block/sifting_particles"
+		"1": "gravesandgolems:block/sifting_particles",
+		"particle": "gravesandgolems:block/sifting_particles"
 	},
 	"elements": [
 		{

@@ -61,6 +61,10 @@ public class BlockRegistry {
             properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
     public static final DeferredBlock<Block> DIRT_BUCKET = registerDirtBucketBlock("dirt_bucket",
             properties -> new DirtBucketBlock(properties.strength(1.5f).sound(SoundType.BAMBOO).noOcclusion()));
+    public static final DeferredBlock<Block> SCREENING_TABLE = registerBlock("screening_table",
+            properties -> new ScreeningTableBlock(properties.strength(1.5f).noOcclusion()));
+
+
 
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){

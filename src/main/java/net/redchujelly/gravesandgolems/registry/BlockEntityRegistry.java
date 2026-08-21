@@ -7,6 +7,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.redchujelly.gravesandgolems.GravesAndGolems;
 import net.redchujelly.gravesandgolems.blocks.entity.CustomBrushableBlockEntity;
 import net.redchujelly.gravesandgolems.blocks.entity.DirtBucketBlockEntity;
+import net.redchujelly.gravesandgolems.blocks.entity.ScreeningTableBlockEntity;
 
 import java.util.function.Supplier;
 
@@ -18,6 +19,9 @@ public class BlockEntityRegistry {
 
     public static final Supplier<BlockEntityType<DirtBucketBlockEntity>> DIRT_BUCKET_BE = BLOCK_ENTITIES.register(
             "dirt_bucket_be", () -> new BlockEntityType<>(DirtBucketBlockEntity::new, BlockRegistry.DIRT_BUCKET.get()));
+
+    public static final Supplier<BlockEntityType<ScreeningTableBlockEntity>> SCREENING_TABLE_BE = BLOCK_ENTITIES.register(
+            "screening_table_be", () -> new BlockEntityType<>(ScreeningTableBlockEntity::new, BlockRegistry.SCREENING_TABLE.get()));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

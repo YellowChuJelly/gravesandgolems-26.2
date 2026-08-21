@@ -22,6 +22,22 @@ public class GaGTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        this.tag(ItemRegistry.SIFTABLES)
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dirt")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("grass_block")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("coarse_dirt")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("rooted_dirt")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("podzol")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("mycelium")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("sand")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("red_sand")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("mud")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("soul_sand")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("soul_soil")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("gravel")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("clay")));
+
         this.tag(ItemRegistry.DIRT_BUCKET_PLACEABLES)
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "suspicious_grave_dirt")))

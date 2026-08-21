@@ -72,6 +72,8 @@ public class GaGBlockLootSubProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.STEVE_FIGURINE.get());
         this.dropSelf(BlockRegistry.ALEX_FIGURINE.get());
         this.dropSelf(BlockRegistry.BLACK_CAT_FIGURINE.get());
+        this.dropSelf(BlockRegistry.SCREENING_TABLE.get());
+
         this.add(BlockRegistry.SUSPICIOUS_BONE_PILE.get(), noDrop());
         this.add(BlockRegistry.SUSPICIOUS_GRAVE_DIRT.get(), noDrop());
         this.add(BlockRegistry.CURSED_FIRE.get(), noDrop());

@@ -177,16 +177,16 @@ public class DirtBucketBlockEntity extends BlockEntity implements MenuProvider{
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    public void setInventoryForDrop(){
-        this.setComponents(DataComponentMap.builder().set(DataComponents.CONTAINER, ItemContainerContents.fromItems(inventory.copyToList())).build());
-    }
-
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         return saveWithoutMetadata(registries);
     }
 
 
+
+    public void setInventoryForDrop(){
+        this.setComponents(DataComponentMap.builder().set(DataComponents.CONTAINER, ItemContainerContents.fromItems(inventory.copyToList())).build());
+    }
 
     @Override
     public @Nullable AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
