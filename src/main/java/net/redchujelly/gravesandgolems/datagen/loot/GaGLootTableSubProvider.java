@@ -15,6 +15,7 @@ import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
 import net.minecraft.world.level.storage.loot.entries.TagEntry;
 import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.common.Tags;
@@ -62,7 +63,9 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
                                 .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(18).setQuality(-1))
                                 .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_junk_table"))).setWeight(10).setQuality(-1))
                                 .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_goods_table"))).setWeight(4))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_rare_table"))).setWeight(1).setQuality(1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_rare_table"))).setWeight(1).setQuality(1)
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SCREENING_TABLE.get())))
+
                         )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_junk_table")),

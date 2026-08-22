@@ -34,6 +34,7 @@ import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.transfer.access.ItemAccess;
 import net.neoforged.neoforge.transfer.item.ItemResource;
@@ -191,7 +192,7 @@ public class ScreeningTableBlockEntity extends BlockEntity {
         item.shrink(1);
         ResourceKey<LootTable> outputTable = getRecipeOutputs(item);
         LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(outputTable);
-        LootParams params = (new LootParams.Builder(level)).create(LootContextParamSets.EMPTY);
+        LootParams params = (new LootParams.Builder(level)).withParameter(LootContextParams.BLOCK_STATE, level.getBlockState(pos)).create(LootContextParamSets.BLOCK_INTERACT);
         ObjectArrayList<ItemStack> loot = lootTable.getRandomItems(params, RandomSource.create());
         ItemStack var10001;
 
@@ -200,8 +201,8 @@ public class ScreeningTableBlockEntity extends BlockEntity {
         } else {
             var10001 = (ItemStack) loot.getFirst();
         }
-//        Block.popResource(level, this.worldPosition, var10001);
-        popResource(level, (Supplier)(() -> new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.3, pos.getZ() + 0.5, var10001, 0, 0.2, 0)), var10001);
+        Block.popResource(level, this.worldPosition, var10001);
+        popResource(level, (Supplier)(() -> new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.6, pos.getZ() + 0.5, var10001, 0, -0.2, 0)), var10001);
     }
 
     private static void popResource(Level level, Supplier<ItemEntity> entityFactory, ItemStack itemStack) {

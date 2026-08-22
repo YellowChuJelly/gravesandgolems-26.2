@@ -78,6 +78,8 @@ public class GaGBlockLootSubProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.DELFTWARE_VASE.get());
         this.dropSelf(BlockRegistry.DELFTWARE_POT.get());
         this.dropSelf(BlockRegistry.DELFTWARE_POT_TALL.get());
+        this.dropSelf(BlockRegistry.DELFTWARE_TILE.get());
+        this.dropSelf(BlockRegistry.DELFTWARE_FLOORING.get());
 
         this.add(BlockRegistry.SUSPICIOUS_BONE_PILE.get(), noDrop());
         this.add(BlockRegistry.SUSPICIOUS_GRAVE_DIRT.get(), noDrop());

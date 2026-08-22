@@ -17,7 +17,7 @@ public class SkullSmokeQuadParticle extends SingleQuadParticle {
     public SkullSmokeQuadParticle(ClientLevel level, double x, double y, double z, SpriteSet sprite) {
         super(level, x, y, z, sprite.first());
         this.spriteSet = sprite;
-        this.setColor(0.0f, 0.3f, 0.0f);
+        this.setColor(0.1f, 0.13f, 0.1f);
         this.scale(1.8f);
         this.gravity = -0.15f;
     }

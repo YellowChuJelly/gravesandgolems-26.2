@@ -68,7 +68,7 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> BLACK_CAT_FIGURINE = registerBlock("figurine_black_cat",
             properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
 
-    //DELFTWARE
+    //DELFTWARE DECO
     public static final DeferredBlock<Block> DELFTWARE_BOWL = registerBlock("delftware_bowl",
             properties -> new SmallHorizontalBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
     public static final DeferredBlock<Block> DELFTWARE_POT = registerBlock("delftware_pot",
@@ -79,6 +79,10 @@ public class BlockRegistry {
             properties -> new SmallHorizontalBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
     public static final DeferredBlock<Block> DELFTWARE_VASE = registerBlock("delftware_vase",
             properties -> new SmallHorizontalBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
+    public static final DeferredBlock<Block> DELFTWARE_TILE = registerBlock("delftware_tile",
+            properties -> new Block(properties.mapColor(MapColor.COLOR_LIGHT_BLUE).strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> DELFTWARE_FLOORING = registerBlock("delftware_flooring",
+            properties -> new CustomHorizontalBlock(properties.mapColor(MapColor.COLOR_LIGHT_BLUE).strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
 
 

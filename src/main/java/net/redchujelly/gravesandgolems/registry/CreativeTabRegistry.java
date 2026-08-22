@@ -34,6 +34,8 @@ public class CreativeTabRegistry {
                 output.accept(BlockRegistry.STEVE_FIGURINE.get());
                 output.accept(BlockRegistry.BLACK_CAT_FIGURINE.get());
                 output.accept(ItemRegistry.DELFTWARE_SHERD.get());
+                output.accept(BlockRegistry.DELFTWARE_TILE.get());
+                output.accept(BlockRegistry.DELFTWARE_FLOORING.get());
                 output.accept(BlockRegistry.DELFTWARE_BOWL.get());
                 output.accept(BlockRegistry.DELFTWARE_TEAPOT.get());
                 output.accept(BlockRegistry.DELFTWARE_VASE.get());

@@ -212,6 +212,9 @@ public class GaGModelProvider extends ModelProvider {
         blockModels.createHorizontallyRotatedBlock(BlockRegistry.SEA_SILK_BLOCK.get(), TexturedModel.CUBE);
         blockModels.createTrivialCube(BlockRegistry.SEA_SILK_FABRIC_BLOCK.get());
         blockModels.createTrivialCube(BlockRegistry.RED_VELVET_BLOCK.get());
+        blockModels.createTrivialCube(BlockRegistry.DELFTWARE_TILE.get());
+        blockModels.createHorizontallyRotatedBlock(BlockRegistry.DELFTWARE_FLOORING.get(), TexturedModel.GLAZED_TERRACOTTA);
+
 
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.ALEX_FIGURINE.get(), "figurine_alex");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.STEVE_FIGURINE.get(), "figurine_steve");
