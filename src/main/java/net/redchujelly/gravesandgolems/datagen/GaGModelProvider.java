@@ -41,6 +41,7 @@ public class GaGModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ItemRegistry.SEA_SILK.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ItemRegistry.SEA_SILK_FABRIC.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ItemRegistry.RED_VELVET_FABRIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemRegistry.DELFTWARE_SHERD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.declareCustomModelItem(ItemRegistry.TROWEL.get());
 
 
@@ -206,13 +207,6 @@ public class GaGModelProvider extends ModelProvider {
                 )
         );
 
-
-//        MultiPartGenerator curtains = MultiPartGenerator.multiPart(BlockRegistry.SEA_SILK_CURTAIN.get())
-//                .with(condition(CurtainBlock.CURTAIN_PART, CurtainBlock.CurtainPart.BOTTOM), plainVariant(blockModels.createSuffixedVariant(BlockRegistry.SEA_SILK_CURTAIN.get(), "_bottom", ModelTemplates.CUBE_ALL, TextureMapping::cube)))
-//                .with(condition(CurtainBlock.CURTAIN_PART, CurtainBlock.CurtainPart.MIDDLE), plainVariant(blockModels.createSuffixedVariant(BlockRegistry.SEA_SILK_CURTAIN.get(), "", ModelTemplates.CUBE_ALL, TextureMapping::cube)))
-//                .with(condition(CurtainBlock.CURTAIN_PART, CurtainBlock.CurtainPart.TOP), plainVariant(blockModels.createSuffixedVariant(BlockRegistry.SEA_SILK_CURTAIN.get(), "_top", ModelTemplates.CUBE_ALL, TextureMapping::cube)));
-
-
         blockModels.createTrivialCube(BlockRegistry.GRAVE_DIRT.get());
         blockModels.createBrushableBlock(BlockRegistry.SUSPICIOUS_GRAVE_DIRT.get());
         blockModels.createHorizontallyRotatedBlock(BlockRegistry.SEA_SILK_BLOCK.get(), TexturedModel.CUBE);
@@ -223,7 +217,11 @@ public class GaGModelProvider extends ModelProvider {
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.STEVE_FIGURINE.get(), "figurine_steve");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.BLACK_CAT_FIGURINE.get(), "figurine_black_cat");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DIRT_BUCKET.get(), "dirt_bucket");
-//        registerCustomModelBlock(blockModels, itemModels, BlockRegistry.SCREENING_TABLE.get(), "screening_table");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_BOWL.get(), "delftware_bowl");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_POT.get(), "delftware_pot");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_POT_TALL.get(), "delftware_pot_tall");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_TEAPOT.get(), "delftware_teapot");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_VASE.get(), "delftware_vase");
 
         blockModels.blockStateOutput.accept(
                 MultiPartGenerator.multiPart(BlockRegistry.SCREENING_TABLE.get())

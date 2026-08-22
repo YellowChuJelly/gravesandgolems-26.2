@@ -19,7 +19,10 @@ public class ItemRegistry {
     public static final DeferredItem<Item> SEA_SILK_FABRIC = ITEMS.registerSimpleItem("sea_silk_fabric");
     public static final DeferredItem<Item> RED_VELVET_FABRIC = ITEMS.registerSimpleItem("red_velvet");
     public static final DeferredItem<Item> TROWEL = ITEMS.registerItem("trowel", p -> new TrowelItem(ToolMaterial.COPPER, 1.5F, -3.0F, p));
+    public static final DeferredItem<Item> DELFTWARE_SHERD = ITEMS.registerSimpleItem("delftware_sherd");
 
+
+    //TAGS
     public static final TagKey<Item> DIRT_BUCKET_PLACEABLES = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_bucket_placeables"));
     public static final TagKey<Item> SIFTABLES = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "siftables"));
 
