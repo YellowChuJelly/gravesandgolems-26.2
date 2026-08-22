@@ -8,5 +8,6 @@ public class CapabilitiesRegistry {
 
     public static void registerCapabilities(RegisterCapabilitiesEvent event){
         event.registerBlockEntity(Capabilities.Item.BLOCK, BlockEntityRegistry.DIRT_BUCKET_BE.get(), (o, direction) -> o.getItemHandler());
+        event.registerBlockEntity(Capabilities.Item.BLOCK, BlockEntityRegistry.SCREENING_TABLE_BE.get(), (o, direction) -> o.getItemHandler());
     }
 }

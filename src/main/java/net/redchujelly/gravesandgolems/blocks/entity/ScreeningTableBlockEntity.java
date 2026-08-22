@@ -18,32 +18,40 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.transfer.access.ItemAccess;
 import net.neoforged.neoforge.transfer.item.ItemResource;
 import net.neoforged.neoforge.transfer.item.ItemStacksResourceHandler;
 import net.redchujelly.gravesandgolems.GravesAndGolems;
 import net.redchujelly.gravesandgolems.blocks.ScreeningTableBlock;
 import net.redchujelly.gravesandgolems.registry.BlockEntityRegistry;
+import net.redchujelly.gravesandgolems.registry.BlockRegistry;
 import net.redchujelly.gravesandgolems.registry.ItemRegistry;
 import org.jspecify.annotations.Nullable;
+
+import java.util.function.Supplier;
 
 public class ScreeningTableBlockEntity extends BlockEntity {
 
     private static final int CONTAINER_SIZE = 1;
     private final ContainerData data;
-    private int max_progress = 50;
+    private int max_progress = 40;
     private int progress = 0;
     private ItemStacksResourceHandler inventory = new ItemStacksResourceHandler(CONTAINER_SIZE) {
         @Override
@@ -101,17 +109,20 @@ public class ScreeningTableBlockEntity extends BlockEntity {
 
     public void tick(Level level, BlockPos pos, BlockState state) {
         if (level instanceof ServerLevel serverLevel) {
-            if (level.getGameTime() % 10 == 0) {
+            long gametime = level.getGameTime();
+            if (gametime % 2 == 0) {
                 if (this.getContainedItem().is(ItemRegistry.SIFTABLES)){
                     if (!state.getValue(ScreeningTableBlock.SIFTING)){
                         level.setBlock(pos, state.setValue(ScreeningTableBlock.SIFTING, true), 3);
                     }
                     increaseCraftingProgress();
-                    level.playSound(null, pos, SoundEvents.BRUSH_SAND, SoundSource.BLOCKS, 0.6f, 1.0f);
+                    if (gametime % 10 == 0) {
+                        level.playSound(null, pos, SoundEvents.BRUSH_SAND, SoundSource.BLOCKS, 0.6f, 1.0f);
+                    }
                     setChanged(level, pos, state);
 
                     if (hasCraftingFinished()){
-                        craftItem(getContainedItem(), serverLevel);
+                        craftItem(getContainedItem(), serverLevel, pos);
                         resetProgress();
                     }
                 }
@@ -176,7 +187,7 @@ public class ScreeningTableBlockEntity extends BlockEntity {
         return playerStack.count() + beStack.count() >= 64;
     }
 
-    private void craftItem(ItemStack item, ServerLevel level){
+    private void craftItem(ItemStack item, ServerLevel level, BlockPos pos){
         item.shrink(1);
         ResourceKey<LootTable> outputTable = getRecipeOutputs(item);
         LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(outputTable);
@@ -189,11 +200,37 @@ public class ScreeningTableBlockEntity extends BlockEntity {
         } else {
             var10001 = (ItemStack) loot.getFirst();
         }
-        Block.popResource(level, this.worldPosition, var10001);
+//        Block.popResource(level, this.worldPosition, var10001);
+        popResource(level, (Supplier)(() -> new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.3, pos.getZ() + 0.5, var10001, 0, 0.2, 0)), var10001);
+    }
+
+    private static void popResource(Level level, Supplier<ItemEntity> entityFactory, ItemStack itemStack) {
+        if (level instanceof ServerLevel serverLevel) {
+            if (!itemStack.isEmpty() && (Boolean)serverLevel.getGameRules().get(GameRules.BLOCK_DROPS) && !level.restoringBlockSnapshots) {
+                ItemEntity entity = (ItemEntity)entityFactory.get();
+                entity.setDefaultPickUpDelay();
+                level.addFreshEntity(entity);
+            }
+        }
+
     }
 
     private ResourceKey<LootTable> getRecipeOutputs(ItemStack itemStack){
-        return ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "suspicious_grave_dirt_loot_table"));
+        Item item = itemStack.getItem();
+        if (itemStack.is(Tags.Items.SANDS)){
+            return ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_loot_table"));
+        } else if (itemStack.is(Tags.Items.GRAVELS)){
+            return ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_loot_table"));
+        } else if (item.equals(Items.MUD)){
+            return ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "mud_sifting_loot_table"));
+        } else if (item.equals(Items.CLAY)){
+            return ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "clay_sifting_loot_table"));
+        } else if (item.equals(BlockRegistry.GRAVE_DIRT.get().asItem())){
+            return ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt_sifting_loot_table"));
+        } else if (item.equals(Items.SOUL_SOIL) || item.equals(Items.SOUL_SAND)){
+            return ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_loot_table"));
+        }
+        return ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_loot_table"));
     }
 
     private boolean hasCraftingFinished(){
