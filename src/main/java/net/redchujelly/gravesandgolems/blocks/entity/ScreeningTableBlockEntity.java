@@ -42,6 +42,7 @@ import net.neoforged.neoforge.transfer.item.ItemResource;
 import net.neoforged.neoforge.transfer.item.ItemStacksResourceHandler;
 import net.redchujelly.gravesandgolems.GravesAndGolems;
 import net.redchujelly.gravesandgolems.blocks.ScreeningTableBlock;
+import net.redchujelly.gravesandgolems.blocks.WeatheringScreeningTableBlock;
 import net.redchujelly.gravesandgolems.registry.BlockEntityRegistry;
 import net.redchujelly.gravesandgolems.registry.BlockRegistry;
 import net.redchujelly.gravesandgolems.registry.ItemRegistry;
@@ -53,7 +54,7 @@ public class ScreeningTableBlockEntity extends BlockEntity {
 
     private static final int CONTAINER_SIZE = 1;
     private final ContainerData data;
-    private int max_progress = 40;
+    private int max_progress = 100;
     private int progress = 0;
     private ItemStacksResourceHandler inventory = new ItemStacksResourceHandler(CONTAINER_SIZE) {
         @Override
@@ -97,6 +98,7 @@ public class ScreeningTableBlockEntity extends BlockEntity {
                 return 2;
             }
         };
+        resetProgress();
     }
 
 
@@ -244,7 +246,11 @@ public class ScreeningTableBlockEntity extends BlockEntity {
 
     private void resetProgress(){
         progress = 0;
-        max_progress = 100;
+        if (this.getBlockState().getBlock() instanceof WeatheringScreeningTableBlock){
+            max_progress = 60;
+        } else {
+            max_progress = 100;
+        }
     }
 
     public int getContainerSize(){

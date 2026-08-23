@@ -18,6 +18,7 @@ public class CreativeTabRegistry {
                 output.accept(ItemRegistry.TROWEL.get());
                 output.accept(BlockRegistry.DIRT_BUCKET.get());
                 output.accept(BlockRegistry.SCREENING_TABLE.get());
+                output.accept(BlockRegistry.COPPER_SCREENING_TABLE.get());
                 output.accept(BlockRegistry.BONE_PILE.get());
                 output.accept(BlockRegistry.CATACOMB_WALL.get());
                 output.accept(BlockRegistry.GRAVE_DIRT.get());
@@ -41,7 +42,6 @@ public class CreativeTabRegistry {
                 output.accept(BlockRegistry.DELFTWARE_VASE.get());
                 output.accept(BlockRegistry.DELFTWARE_POT.get());
                 output.accept(BlockRegistry.DELFTWARE_POT_TALL.get());
-                output.accept(BlockRegistry.COPPER_SCREENING_TABLE.get());
 //                output.accept(BlockRegistry.WAXED_COPPER_SCREENING_TABLE.get());
 //                output.accept(BlockRegistry.EXPOSED_COPPER_SCREENING_TABLE.get());
 //                output.accept(BlockRegistry.WAXED_EXPOSED_COPPER_SCREENING_TABLE.get());

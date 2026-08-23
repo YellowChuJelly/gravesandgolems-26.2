@@ -48,7 +48,18 @@ public class GaGTagsProvider extends ItemTagsProvider {
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "figurine_alex")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "figurine_black_cat")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "trowel")))
-                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sea_silk")));
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "screening_table")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "copper_screening_table")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sea_silk")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sea_silk_fabric")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "delftware_vase")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "delftware_bowl")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "delftware_pot")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "delftware_pot_tall")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "delftware_teapot")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "delftware_tile")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "delftware_flooring")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "delftware_sherd")));
 
         this.tag(ItemRegistry.DIRT_BUCKET_PLACEABLES)
                 .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dirt")))
