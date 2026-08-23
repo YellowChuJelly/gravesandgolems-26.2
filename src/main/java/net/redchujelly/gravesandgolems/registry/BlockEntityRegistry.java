@@ -21,7 +21,7 @@ public class BlockEntityRegistry {
             "dirt_bucket_be", () -> new BlockEntityType<>(DirtBucketBlockEntity::new, BlockRegistry.DIRT_BUCKET.get()));
 
     public static final Supplier<BlockEntityType<ScreeningTableBlockEntity>> SCREENING_TABLE_BE = BLOCK_ENTITIES.register(
-            "screening_table_be", () -> new BlockEntityType<>(ScreeningTableBlockEntity::new, BlockRegistry.SCREENING_TABLE.get()));
+            "screening_table_be", () -> new BlockEntityType<>(ScreeningTableBlockEntity::new, BlockRegistry.SCREENING_TABLE.get(), BlockRegistry.COPPER_SCREENING_TABLE.get()));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

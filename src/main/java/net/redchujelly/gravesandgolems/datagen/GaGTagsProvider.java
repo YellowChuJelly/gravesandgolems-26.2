@@ -82,5 +82,22 @@ public class GaGTagsProvider extends ItemTagsProvider {
                 .addTags(ItemTags.DECORATED_POT_SHERDS)
                 .addTags(Tags.Items.MUSIC_DISCS);
 
+        this.tag(ItemRegistry.DEAD_CORALS)
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_brain_coral")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_tube_coral")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_bubble_coral")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_fire_coral")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_horn_coral")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_brain_coral_block")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_tube_coral_block")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_bubble_coral_block")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_fire_coral_block")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_horn_coral_block")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_brain_coral_fan")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_tube_coral_fan")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_bubble_coral_fan")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_fire_coral_fan")))
+                .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_horn_coral_fan")));
+
     }
 }

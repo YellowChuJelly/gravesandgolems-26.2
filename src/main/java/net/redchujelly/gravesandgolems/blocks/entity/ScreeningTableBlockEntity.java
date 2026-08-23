@@ -2,6 +2,7 @@ package net.redchujelly.gravesandgolems.blocks.entity;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -201,8 +202,7 @@ public class ScreeningTableBlockEntity extends BlockEntity {
         } else {
             var10001 = (ItemStack) loot.getFirst();
         }
-        Block.popResource(level, this.worldPosition, var10001);
-        popResource(level, (Supplier)(() -> new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.6, pos.getZ() + 0.5, var10001, 0, -0.2, 0)), var10001);
+        popResource(level, (Supplier)(() -> new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, var10001, 0, -0.2, 0)), var10001);
     }
 
     private static void popResource(Level level, Supplier<ItemEntity> entityFactory, ItemStack itemStack) {
@@ -255,7 +255,10 @@ public class ScreeningTableBlockEntity extends BlockEntity {
         return this.inventory.copyToList().getFirst();
     }
 
-    public ItemStacksResourceHandler getItemHandler(){
+    public ItemStacksResourceHandler getItemHandler(Direction direction){
+        if (direction.equals(Direction.DOWN)){
+            return null;
+        }
         return inventory;
     }
 

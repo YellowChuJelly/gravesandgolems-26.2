@@ -25,6 +25,7 @@ public class ItemRegistry {
     //TAGS
     public static final TagKey<Item> DIRT_BUCKET_PLACEABLES = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_bucket_placeables"));
     public static final TagKey<Item> SIFTABLES = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "siftables"));
+    public static final TagKey<Item> DEAD_CORALS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dead_corals"));
 
 
     public static void register(IEventBus eventBus){

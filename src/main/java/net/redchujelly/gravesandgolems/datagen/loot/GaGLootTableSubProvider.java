@@ -60,12 +60,12 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_loot_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(18).setQuality(-1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_junk_table"))).setWeight(10).setQuality(-1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_goods_table"))).setWeight(4))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_rare_table"))).setWeight(1).setQuality(1)
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SCREENING_TABLE.get())))
-
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(35).setQuality(-1).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(40).setQuality(-1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_junk_table"))).setWeight(60).setQuality(-1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_goods_table"))).setWeight(10))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_goods_table"))).setWeight(10).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_rare_table"))).setWeight(1).setQuality(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
                         )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_junk_table")),
@@ -95,10 +95,10 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(Items.CLAY).setWeight(2))
                                 .add(LootItem.lootTableItem(Items.RAW_COPPER).setWeight(2))
                                 .add(LootItem.lootTableItem(Items.RAW_IRON).setWeight(1))
-                                .add(LootItem.lootTableItem(Items.ARCHER_POTTERY_SHERD).setWeight(1))
-                                .add(LootItem.lootTableItem(Items.BLADE_POTTERY_SHERD).setWeight(1))
-                                .add(LootItem.lootTableItem(Items.SCRAPE_POTTERY_SHERD).setWeight(1))
-                                .add(LootItem.lootTableItem(Items.DANGER_POTTERY_SHERD).setWeight(1))
+                                .add(LootItem.lootTableItem(Items.ARCHER_POTTERY_SHERD))
+                                .add(LootItem.lootTableItem(Items.BLADE_POTTERY_SHERD))
+                                .add(LootItem.lootTableItem(Items.SCRAPE_POTTERY_SHERD))
+                                .add(LootItem.lootTableItem(Items.DANGER_POTTERY_SHERD))
                         )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "dirt_sifting_rare_table")),
@@ -112,11 +112,12 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_loot_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(70).setQuality(-1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(35).setQuality(-1).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(40).setQuality(-1))
                                 .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_junk_table"))).setWeight(60).setQuality(-1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_goods_table"))).setWeight(20))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_rare_table"))).setWeight(1).setQuality(1))
-                        )
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_goods_table"))).setWeight(10))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_goods_table"))).setWeight(10).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_rare_table"))).setWeight(1).setQuality(1).setWeight(1)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_junk_table")),
                 LootTable.lootTable()
@@ -128,14 +129,14 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(Items.BONE_MEAL).setWeight(3))
                                 .add(LootItem.lootTableItem(Items.GOLD_NUGGET).setWeight(2).setQuality(2))
                                 .add(LootItem.lootTableItem(Items.PRISMARINE).setWeight(1).setQuality(2))
-                                // DEAD CORALS .add(LootItem.lootTableItem(TagEntry.tagContents())
+                                .add(TagEntry.tagContents(ItemRegistry.DEAD_CORALS).setWeight(1))
                         )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "sand_sifting_goods_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .add(LootItem.lootTableItem(Items.RAW_COPPER).setWeight(4))
-                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK.get()).setWeight(3))
+                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK.get()).setWeight(3).setWeight(1)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get()))
                                 .add(LootItem.lootTableItem(Items.RAW_GOLD).setWeight(2))
                                 .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS).setWeight(2))
                                 .add(LootItem.lootTableItem(Items.TURTLE_SCUTE).setWeight(2))
@@ -159,10 +160,12 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "mud_sifting_loot_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(100).setQuality(-1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(35).setQuality(-1).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(50).setQuality(-1))
                                 .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "mud_sifting_junk_table"))).setWeight(60).setQuality(-1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "mud_sifting_goods_table"))).setWeight(20))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "mud_sifting_rare_table"))).setWeight(1).setQuality(1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "mud_sifting_goods_table"))).setWeight(10))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "mud_sifting_goods_table"))).setWeight(10).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "mud_sifting_rare_table"))).setWeight(1).setQuality(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
                         )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "mud_sifting_junk_table")),
@@ -208,10 +211,12 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "clay_sifting_loot_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(100).setQuality(-1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(35).setQuality(-1).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(40).setQuality(-1))
                                 .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "clay_sifting_junk_table"))).setWeight(60).setQuality(-1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "clay_sifting_goods_table"))).setWeight(20))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "clay_sifting_rare_table"))).setWeight(1).setQuality(1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "clay_sifting_goods_table"))).setWeight(10))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "clay_sifting_goods_table"))).setWeight(10).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "clay_sifting_rare_table"))).setWeight(1).setQuality(1).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
                         )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "clay_sifting_junk_table")),
@@ -255,10 +260,12 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_loot_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(100).setQuality(-1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(35).setQuality(-1).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(40).setQuality(-1))
                                 .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_junk_table"))).setWeight(60).setQuality(-1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_goods_table"))).setWeight(20))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_rare_table"))).setWeight(1).setQuality(1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_goods_table"))).setWeight(10))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_goods_table"))).setWeight(10).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_rare_table"))).setWeight(1).setQuality(1).setWeight(1)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get()))
                         )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_junk_table")),
@@ -278,7 +285,7 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_goods_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK.get()).setWeight(4))
+                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK.get()).setWeight(4).setWeight(1)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get()))
                                 .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS).setWeight(3))
                                 .add(LootItem.lootTableItem(Items.TURTLE_EGG).setWeight(3))
                                 .add(LootItem.lootTableItem(Items.NAUTILUS_SHELL).setWeight(2).setQuality(2))
@@ -300,10 +307,12 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_loot_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(100).setQuality(-1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(35).setQuality(-1).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(50).setQuality(-1))
                                 .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_junk_table"))).setWeight(60).setQuality(-1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_goods_table"))).setWeight(20))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_rare_table"))).setWeight(1).setQuality(1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_goods_table"))).setWeight(10))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_goods_table"))).setWeight(10).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_rare_table"))).setWeight(1).setQuality(1).setWeight(1)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get()))
                         )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_junk_table")),
@@ -331,7 +340,7 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(Items.SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE).setWeight(1).setQuality(2))
                                 .add(LootItem.lootTableItem(Items.RIB_ARMOR_TRIM_SMITHING_TEMPLATE).setWeight(1).setQuality(2))
                                 .add(LootItem.lootTableItem(Items.WITHER_SKELETON_SKULL).setWeight(1).setQuality(2))
-                                .add(LootItem.lootTableItem(Items.DRIED_GHAST).setWeight(1).setQuality(2))
+                                .add(LootItem.lootTableItem(Items.DRIED_GHAST).setWeight(1).setQuality(2).setWeight(1)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get()))
                          )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "soulsand_sifting_rare_table")),
@@ -346,20 +355,21 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt_sifting_loot_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(100).setQuality(-1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(35).setQuality(-1).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "empty_loot_table"))).setWeight(40).setQuality(-1))
                                 .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt_sifting_junk_table"))).setWeight(60).setQuality(-1))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt_sifting_goods_table"))).setWeight(20))
-                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt_sifting_rare_table"))).setWeight(1).setQuality(1))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt_sifting_goods_table"))).setWeight(10))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt_sifting_goods_table"))).setWeight(10).setWeight(1).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get())))
+                                .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt_sifting_rare_table"))).setWeight(1).setQuality(1).setWeight(1)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.COPPER_SCREENING_TABLE.get()))
                         )
         );
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt_sifting_junk_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .add(LootItem.lootTableItem(Items.BONE).setWeight(3))
-                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK.get()).setWeight(3).setQuality(2))
+                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK.get()).setWeight(4).setQuality(2))
                                 .add(LootItem.lootTableItem(BlockRegistry.BONE_PILE.get()).setWeight(2))
                                 .add(LootItem.lootTableItem(Items.BOOK).setWeight(1))
-                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK.get()).setWeight(1).setQuality(2))
                                 .add(LootItem.lootTableItem(Items.FLOWER_POT).setWeight(1))
                                 .add(LootItem.lootTableItem(Items.GLASS_BOTTLE).setWeight(1))
                                 .add(LootItem.lootTableItem(Items.CANDLE).setWeight(1))

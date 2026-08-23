@@ -27,7 +27,7 @@ public class GravesAndGolemsDatagen {
 
         event.createProvider((output1, lookupProvider) -> new LootTableProvider(
                 output, Set.of(), List.of(
-                        new LootTableProvider.SubProviderEntry(GaGLootTableSubProvider::new, LootContextParamSets.BLOCK_INTERACT),
+                        new LootTableProvider.SubProviderEntry(GaGLootTableSubProvider::new, LootContextParamSets.BLOCK_USE),
                         new LootTableProvider.SubProviderEntry(GaGBlockLootSubProvider::new, LootContextParamSets.BLOCK)
         ), lookupProvider
         ));

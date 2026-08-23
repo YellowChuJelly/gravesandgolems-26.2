@@ -41,6 +41,14 @@ public class CreativeTabRegistry {
                 output.accept(BlockRegistry.DELFTWARE_VASE.get());
                 output.accept(BlockRegistry.DELFTWARE_POT.get());
                 output.accept(BlockRegistry.DELFTWARE_POT_TALL.get());
+                output.accept(BlockRegistry.COPPER_SCREENING_TABLE.get());
+//                output.accept(BlockRegistry.WAXED_COPPER_SCREENING_TABLE.get());
+//                output.accept(BlockRegistry.EXPOSED_COPPER_SCREENING_TABLE.get());
+//                output.accept(BlockRegistry.WAXED_EXPOSED_COPPER_SCREENING_TABLE.get());
+//                output.accept(BlockRegistry.WEATHERED_COPPER_SCREENING_TABLE.get());
+//                output.accept(BlockRegistry.WAXED_WEATHERED_COPPER_SCREENING_TABLE.get());
+//                output.accept(BlockRegistry.OXIDIZED_COPPER_SCREENING_TABLE.get());
+//                output.accept(BlockRegistry.WAXED_OXIDIZED_COPPER_SCREENING_TABLE.get());
 
             }).build());
 

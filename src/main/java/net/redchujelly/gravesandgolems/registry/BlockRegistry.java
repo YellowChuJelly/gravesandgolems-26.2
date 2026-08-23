@@ -58,6 +58,8 @@ public class BlockRegistry {
             properties -> new DirtBucketBlock(properties.strength(0.7f).sound(SoundType.BAMBOO).noOcclusion()));
     public static final DeferredBlock<Block> SCREENING_TABLE = registerBlock("screening_table",
             properties -> new ScreeningTableBlock(properties.mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> COPPER_SCREENING_TABLE = registerBlock("copper_screening_table",
+            properties -> new WeatheringScreeningTableBlock(properties.mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.COPPER)));
 
 
     //ARTIFACTS
