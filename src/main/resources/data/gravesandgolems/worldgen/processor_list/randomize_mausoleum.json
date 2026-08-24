@@ -1,0 +1,117 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "gravesandgolems:grave_dirt",
+            "probability": 0.1,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "gravesandgolems:suspicious_grave_dirt"
+          },
+          "block_entity_modifier": {
+            "type": "minecraft:append_loot",
+            "loot_table": "gravesandgolems:suspicious_grave_dirt_loot_table_test"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "gravesandgolems:bone_pile",
+            "probability": 0.2,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "gravesandgolems:suspicious_bone_pile"
+          },
+          "block_entity_modifier": {
+            "type": "minecraft:append_loot",
+            "loot_table": "gravesandgolems:suspicious_bone_pile_loot_table"
+          }
+        },        {
+          "":"The block to look for from the nbt file",
+          "":"This has a 50% chance of allowing the found stone bricks block to be replaced",
+          "input_predicate": {
+            "block": "minecraft:polished_tuff",
+            "probability": 0.2,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "":"This is always true",
+          "":"Village roads have this part look for water so roads can be replaced with oak planks instead",
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "":"The actual block to place if the above conditions return true",
+          "output_state": {
+            "Name": "minecraft:tuff"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:polished_andesite",
+            "probability": 0.2,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:andesite"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:polished_tuff_slab",
+            "probability": 0.2,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:tuff_slab",
+            "Properties": {
+              "type": "bottom",
+              "waterlogged": false
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:polished_tuff_wall",
+            "probability": 0.1,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "":"If an output_state block has properties, you must define ALL properties of the block!",
+          "output_state": {
+            "Name": "minecraft:tuff_wall",
+            "Properties": {
+              "waterlogged": false,
+              "up": true,
+              "east": "none",
+              "south": "none",
+              "north": "none",
+              "west": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "minecraft:block_rot",
+      "integrity": 0.85,
+      "rottable_blocks": "gravesandgolems:grave_dirt"
+    }
+  ]
+}

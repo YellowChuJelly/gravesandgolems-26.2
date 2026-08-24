@@ -115,7 +115,7 @@ public class GaGModelProvider extends ModelProvider {
 
         MultiVariant susBones = new MultiVariant(WeightedList.of(
                 new Weighted<>((BlockModelGenerators.plainModel(blockModels.createSuffixedVariant(BlockRegistry.SUSPICIOUS_BONE_PILE.get(), "_1_0", ModelTemplates.CUBE_ALL, TextureMapping::cube))), 2),
-                new Weighted<>((BlockModelGenerators.plainModel(blockModels.createSuffixedVariant(BlockRegistry.SUSPICIOUS_BONE_PILE.get(), "_2_0", ModelTemplates.CUBE_ALL, TextureMapping::cube))), 5)
+                new Weighted<>((BlockModelGenerators.plainModel(blockModels.createSuffixedVariant(BlockRegistry.SUSPICIOUS_BONE_PILE.get(), "", ModelTemplates.CUBE_ALL, TextureMapping::cube))), 5)
         ));
         MultiVariant susBones1 = new MultiVariant(WeightedList.of(
                 new Weighted<>((BlockModelGenerators.plainModel(blockModels.createSuffixedVariant(BlockRegistry.SUSPICIOUS_BONE_PILE.get(), "_1_1", ModelTemplates.CUBE_ALL, TextureMapping::cube))), 2),

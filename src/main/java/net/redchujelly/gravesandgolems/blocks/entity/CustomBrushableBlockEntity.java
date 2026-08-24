@@ -56,7 +56,7 @@ public class CustomBrushableBlockEntity extends BlockEntity {
         private long coolDownEndsAtTick;
         private ItemStack item;
         private @Nullable Direction hitDirection;
-        private @Nullable ResourceKey<LootTable> lootTable = ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "suspicious_grave_dirt_loot_table"));
+        private @Nullable ResourceKey<LootTable> lootTable;
         private long lootTableSeed;
 
         public CustomBrushableBlockEntity(BlockPos worldPosition, BlockState blockState) {

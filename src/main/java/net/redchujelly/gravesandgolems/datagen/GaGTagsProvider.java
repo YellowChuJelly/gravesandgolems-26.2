@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
@@ -22,6 +23,7 @@ public class GaGTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        //MOD TAGS
         this.tag(ItemRegistry.SIFTABLES)
                 .add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "grave_dirt")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dirt")))
@@ -110,5 +112,7 @@ public class GaGTagsProvider extends ItemTagsProvider {
                 .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_fire_coral_fan")))
                 .add(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace("dead_horn_coral_fan")));
 
+
+        //VANILLA TAGS
     }
 }
