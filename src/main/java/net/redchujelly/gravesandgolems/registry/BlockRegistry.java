@@ -56,6 +56,8 @@ public class BlockRegistry {
     //TOOLS
     public static final DeferredBlock<Block> DIRT_BUCKET = registerDirtBucketBlock("dirt_bucket",
             properties -> new DirtBucketBlock(properties.strength(0.7f).sound(SoundType.BAMBOO).noOcclusion()));
+    public static final DeferredBlock<Block> SOIL_BUCKET = registerDirtBucketBlock("soil_bucket",
+            properties -> new DirtBucketBlock(properties.strength(0.7f).sound(SoundType.BAMBOO).noOcclusion()));
     public static final DeferredBlock<Block> SCREENING_TABLE = registerBlock("screening_table",
             properties -> new ScreeningTableBlock(properties.mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> COPPER_SCREENING_TABLE = registerBlock("copper_screening_table",

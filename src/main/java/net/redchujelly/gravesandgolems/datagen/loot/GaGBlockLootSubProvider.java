@@ -93,6 +93,7 @@ public class GaGBlockLootSubProvider extends BlockLootSubProvider {
         this.add(BlockRegistry.SUSPICIOUS_GRAVE_DIRT.get(), noDrop());
         this.add(BlockRegistry.CURSED_FIRE.get(), noDrop());
         this.add(BlockRegistry.DIRT_BUCKET.get(), createShulkerBoxDrop(BlockRegistry.DIRT_BUCKET.get()));
+        this.add(BlockRegistry.SOIL_BUCKET.get(), createShulkerBoxDrop(BlockRegistry.SOIL_BUCKET.get()));
     }
 
 }

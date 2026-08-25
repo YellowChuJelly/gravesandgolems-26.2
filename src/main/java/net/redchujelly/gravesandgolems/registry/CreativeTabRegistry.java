@@ -17,6 +17,7 @@ public class CreativeTabRegistry {
             .displayItems((parameters, output) -> {
                 output.accept(ItemRegistry.TROWEL.get());
                 output.accept(BlockRegistry.DIRT_BUCKET.get());
+                output.accept(BlockRegistry.SOIL_BUCKET.get());
                 output.accept(BlockRegistry.SCREENING_TABLE.get());
                 output.accept(BlockRegistry.COPPER_SCREENING_TABLE.get());
                 output.accept(BlockRegistry.BONE_PILE.get());

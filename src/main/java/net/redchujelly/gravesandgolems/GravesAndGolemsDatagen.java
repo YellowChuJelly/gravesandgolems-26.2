@@ -7,8 +7,10 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.redchujelly.gravesandgolems.datagen.GaGBlockTagsProvider;
 import net.redchujelly.gravesandgolems.datagen.GaGModelProvider;
-import net.redchujelly.gravesandgolems.datagen.GaGTagsProvider;
+import net.redchujelly.gravesandgolems.datagen.GaGItemTagsProvider;
+import net.redchujelly.gravesandgolems.datagen.GaGRecipeProvider;
 import net.redchujelly.gravesandgolems.datagen.loot.GaGBlockLootSubProvider;
 import net.redchujelly.gravesandgolems.datagen.loot.GaGLootTableSubProvider;
 
@@ -23,7 +25,9 @@ public class GravesAndGolemsDatagen {
         PackOutput output = generator.getPackOutput();
 
         generator.addProvider(true, new GaGModelProvider(output));
-        event.createProvider(GaGTagsProvider::new);
+        event.createProvider(GaGItemTagsProvider::new);
+        event.createProvider(GaGBlockTagsProvider::new);
+        event.createProvider(GaGRecipeProvider.Runner::new);
 
         event.createProvider((output1, lookupProvider) -> new LootTableProvider(
                 output, Set.of(), List.of(

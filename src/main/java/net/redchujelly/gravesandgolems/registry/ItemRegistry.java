@@ -18,7 +18,7 @@ public class ItemRegistry {
     public static final DeferredItem<Item> SEA_SILK = ITEMS.registerSimpleItem("sea_silk");
     public static final DeferredItem<Item> SEA_SILK_FABRIC = ITEMS.registerSimpleItem("sea_silk_fabric");
     public static final DeferredItem<Item> RED_VELVET_FABRIC = ITEMS.registerSimpleItem("red_velvet");
-    public static final DeferredItem<Item> TROWEL = ITEMS.registerItem("trowel", p -> new TrowelItem(ToolMaterial.COPPER, 1.5F, -3.0F, p));
+    public static final DeferredItem<Item> TROWEL = ITEMS.registerItem("trowel", p -> new TrowelItem(ToolMaterial.COPPER, 1.5F, -3.0F, p.enchantable(3)));
     public static final DeferredItem<Item> DELFTWARE_SHERD = ITEMS.registerSimpleItem("delftware_sherd");
 
 

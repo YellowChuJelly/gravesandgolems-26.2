@@ -18,7 +18,7 @@ public class BlockEntityRegistry {
             "custom_brushable_be", () -> new BlockEntityType<>(CustomBrushableBlockEntity::new, BlockRegistry.SUSPICIOUS_GRAVE_DIRT.get(), BlockRegistry.SUSPICIOUS_BONE_PILE.get()));
 
     public static final Supplier<BlockEntityType<DirtBucketBlockEntity>> DIRT_BUCKET_BE = BLOCK_ENTITIES.register(
-            "dirt_bucket_be", () -> new BlockEntityType<>(DirtBucketBlockEntity::new, BlockRegistry.DIRT_BUCKET.get()));
+            "dirt_bucket_be", () -> new BlockEntityType<>(DirtBucketBlockEntity::new, BlockRegistry.DIRT_BUCKET.get(), BlockRegistry.SOIL_BUCKET.get()));
 
     public static final Supplier<BlockEntityType<ScreeningTableBlockEntity>> SCREENING_TABLE_BE = BLOCK_ENTITIES.register(
             "screening_table_be", () -> new BlockEntityType<>(ScreeningTableBlockEntity::new, BlockRegistry.SCREENING_TABLE.get(), BlockRegistry.COPPER_SCREENING_TABLE.get()));

@@ -5,19 +5,17 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
-import net.neoforged.neoforge.registries.DeferredRegister;
 import net.redchujelly.gravesandgolems.GravesAndGolems;
 import net.redchujelly.gravesandgolems.registry.ItemRegistry;
 
 import java.util.concurrent.CompletableFuture;
 
-public class GaGTagsProvider extends ItemTagsProvider {
+public class GaGItemTagsProvider extends ItemTagsProvider {
 
-    public GaGTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    public GaGItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider, GravesAndGolems.MODID);
     }
 
@@ -114,5 +112,13 @@ public class GaGTagsProvider extends ItemTagsProvider {
 
 
         //VANILLA TAGS
+        tag(ItemTags.MINING_ENCHANTABLE)
+                .add(ItemRegistry.TROWEL.getKey());
+        tag(ItemTags.MINING_LOOT_ENCHANTABLE)
+                .add(ItemRegistry.TROWEL.getKey());
+        tag(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(ItemRegistry.TROWEL.getKey());
+        tag(ItemTags.VANISHING_ENCHANTABLE)
+                .add(ItemRegistry.TROWEL.getKey());
     }
 }

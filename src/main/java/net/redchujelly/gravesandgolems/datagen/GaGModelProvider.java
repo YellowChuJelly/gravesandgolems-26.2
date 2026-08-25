@@ -221,6 +221,7 @@ public class GaGModelProvider extends ModelProvider {
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.STEVE_FIGURINE.get(), "figurine_steve");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.BLACK_CAT_FIGURINE.get(), "figurine_black_cat");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DIRT_BUCKET.get(), "dirt_bucket");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.SOIL_BUCKET.get(), "soil_bucket");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_BOWL.get(), "delftware_bowl");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_POT.get(), "delftware_pot");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_POT_TALL.get(), "delftware_pot_tall");
