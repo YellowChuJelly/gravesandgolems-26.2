@@ -13,6 +13,7 @@ public class CustomHorizontalBlock extends HorizontalDirectionalBlock {
 
     public CustomHorizontalBlock(Properties pProperties) {
         super(pProperties);
+
     }
 
     @Override

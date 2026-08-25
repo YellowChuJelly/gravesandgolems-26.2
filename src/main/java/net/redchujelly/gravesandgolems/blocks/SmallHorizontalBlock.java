@@ -25,6 +25,7 @@ public class SmallHorizontalBlock extends CustomHorizontalBlock implements Simpl
 
     public SmallHorizontalBlock(Properties pProperties) {
         super(pProperties);
+        registerDefaultState(stateDefinition.any().setValue(WATERLOGGED, false));
     }
 
     @Override

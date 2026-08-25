@@ -120,5 +120,7 @@ public class GaGItemTagsProvider extends ItemTagsProvider {
                 .add(ItemRegistry.TROWEL.getKey());
         tag(ItemTags.VANISHING_ENCHANTABLE)
                 .add(ItemRegistry.TROWEL.getKey());
+        tag(ItemTags.VANISHING_ENCHANTABLE)
+                .add(ItemRegistry.TROWEL.getKey());
     }
 }

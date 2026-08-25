@@ -17,6 +17,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.redchujelly.gravesandgolems.GravesAndGolems;
 import net.redchujelly.gravesandgolems.blocks.*;
+import net.redchujelly.gravesandgolems.blocks.boundingboxclasses.*;
 import net.redchujelly.gravesandgolems.items.DirtBucketBlockItem;
 
 import java.util.function.Function;
@@ -66,23 +67,23 @@ public class BlockRegistry {
 
     //ARTIFACTS
     public static final DeferredBlock<Block> STEVE_FIGURINE = registerBlock("figurine_steve",
-            properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+            properties -> new PlayerFigurineBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
     public static final DeferredBlock<Block> ALEX_FIGURINE = registerBlock("figurine_alex",
-            properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+            properties -> new PlayerFigurineBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
     public static final DeferredBlock<Block> BLACK_CAT_FIGURINE = registerBlock("figurine_black_cat",
-            properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+            properties -> new CatFigurineBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
 
     //DELFTWARE DECO
     public static final DeferredBlock<Block> DELFTWARE_BOWL = registerBlock("delftware_bowl",
-            properties -> new SmallHorizontalBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
+            properties -> new BowlBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
     public static final DeferredBlock<Block> DELFTWARE_POT = registerBlock("delftware_pot",
-            properties -> new SmallHorizontalBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
+            properties -> new PotBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
     public static final DeferredBlock<Block> DELFTWARE_POT_TALL = registerBlock("delftware_pot_tall",
-            properties -> new SmallHorizontalBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
+            properties -> new TallPotBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
     public static final DeferredBlock<Block> DELFTWARE_TEAPOT = registerBlock("delftware_teapot",
-            properties -> new SmallHorizontalBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
+            properties -> new TeapotBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
     public static final DeferredBlock<Block> DELFTWARE_VASE = registerBlock("delftware_vase",
-            properties -> new SmallHorizontalBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
+            properties -> new VaseBlock(properties.strength(0.5f).sound(SoundType.DECORATED_POT)));
     public static final DeferredBlock<Block> DELFTWARE_TILE = registerBlock("delftware_tile",
             properties -> new Block(properties.mapColor(MapColor.COLOR_LIGHT_BLUE).strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DELFTWARE_FLOORING = registerBlock("delftware_flooring",
