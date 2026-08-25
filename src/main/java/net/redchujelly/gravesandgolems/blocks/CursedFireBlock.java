@@ -24,7 +24,7 @@ public class CursedFireBlock extends BaseFireBlock {
     public static final MapCodec<CursedFireBlock> CODEC = simpleCodec(CursedFireBlock::new);
 
     public CursedFireBlock(Properties properties) {
-        super(properties.replaceable(), 2.0f);
+        super(properties.replaceable(), 3.0f);
     }
 
     public MapCodec<CursedFireBlock> codec() {
