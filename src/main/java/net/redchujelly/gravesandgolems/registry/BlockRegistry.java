@@ -63,7 +63,8 @@ public class BlockRegistry {
             properties -> new ScreeningTableBlock(properties.mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> COPPER_SCREENING_TABLE = registerBlock("copper_screening_table",
             properties -> new WeatheringScreeningTableBlock(properties.mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.COPPER)));
-
+    public static final DeferredBlock<Block> DISPLAY_CASE = registerBlock("display_case",
+            properties -> new Block(properties.mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
 
     //ARTIFACTS
     public static final DeferredBlock<Block> STEVE_FIGURINE = registerBlock("figurine_steve",
@@ -72,6 +73,14 @@ public class BlockRegistry {
             properties -> new PlayerFigurineBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
     public static final DeferredBlock<Block> BLACK_CAT_FIGURINE = registerBlock("figurine_black_cat",
             properties -> new CatFigurineBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+
+    //HEADSTONES
+    public static final DeferredBlock<Block> HEADSTONE_1 = registerBlock("grave_1",
+            properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+    public static final DeferredBlock<Block> HEADSTONE_2 = registerBlock("grave_2",
+            properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+    public static final DeferredBlock<Block> HEADSTONE_3 = registerBlock("grave_3",
+            properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
 
     //DELFTWARE DECO
     public static final DeferredBlock<Block> DELFTWARE_BOWL = registerBlock("delftware_bowl",

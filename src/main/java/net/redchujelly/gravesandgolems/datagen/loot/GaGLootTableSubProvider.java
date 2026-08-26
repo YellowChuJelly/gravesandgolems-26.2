@@ -53,16 +53,36 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "suspicious_grave_dirt_loot_table_test")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .add(LootItem.lootTableItem(BlockRegistry.BONE_PILE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1,8))).setWeight(2))
-                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(5,20))).setWeight(7))
-                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK_FABRIC.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(3,15))).setWeight(2))
+                                .add(LootItem.lootTableItem(BlockRegistry.BONE_PILE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1,8))).setWeight(4).setQuality(-2))
+                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(5,20))).setWeight(5))
+                                .add(LootItem.lootTableItem(ItemRegistry.SEA_SILK_FABRIC.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(3,15))).setWeight(2).setQuality(1))
                                 .add(LootItem.lootTableItem(BlockRegistry.STEVE_FIGURINE.get()).setQuality(2))
                                 .add(LootItem.lootTableItem(BlockRegistry.ALEX_FIGURINE.get()).setQuality(2))
+                                .add(LootItem.lootTableItem(ItemRegistry.DELFTWARE_SHERD.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2,6))).setQuality(2).setWeight(3))
                                 .add(LootItem.lootTableItem(BlockRegistry.BLACK_CAT_FIGURINE.get()).setQuality(3))
 
-                                .add(LootItem.lootTableItem(Items.HONEY_BOTTLE).setQuality(2))
-                                .add(LootItem.lootTableItem(Items.IRON_NUGGET).setQuality(1).setWeight(2))
-                                .add(LootItem.lootTableItem(Items.BONE).setQuality(1).setWeight(2))
+                                .add(LootItem.lootTableItem(Items.HONEY_BOTTLE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1,4))))
+                                .add(LootItem.lootTableItem(Items.IRON_NUGGET).setQuality(-1).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(3,10))))
+                                .add(LootItem.lootTableItem(Items.IRON_INGOT).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1,6))))
+                                .add(LootItem.lootTableItem(Items.BONE).setQuality(-1).setWeight(2))
+                                .add(LootItem.lootTableItem(Items.DIAMOND).setQuality(3).setWeight(1))
+                                .add(LootItem.lootTableItem(Items.EMERALD).setQuality(1).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(2,8))))
+                                .add(LootItem.lootTableItem(Items.AMETHYST_SHARD).setQuality(1).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(3,10))))
+                                .add(LootItem.lootTableItem(Items.RESIN_CLUMP).setQuality(1).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(3,6))))
+                        )
+        );
+
+        biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "suspicious_gravel_pottery_foundation_loot_table")),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .add(LootItem.lootTableItem(ItemRegistry.DELFTWARE_SHERD.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1,8))).setWeight(4).setQuality(2))
+                                .add(LootItem.lootTableItem(Items.BRICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(2,8))).setWeight(8).setQuality(-1))
+                                .add(LootItem.lootTableItem(Items.CLAY_BALL).apply(SetItemCountFunction.setCount(UniformGenerator.between(4,8))).setWeight(8).setQuality(-1))
+                                .add(LootItem.lootTableItem(Items.RESIN_CLUMP).apply(SetItemCountFunction.setCount(UniformGenerator.between(2,4))).setWeight(1).setQuality(3))
+                                .add(LootItem.lootTableItem(Items.TERRACOTTA).apply(SetItemCountFunction.setCount(UniformGenerator.between(1,4))).setWeight(3).setQuality(-1))
+                                .add(LootItem.lootTableItem(Items.ARMS_UP_POTTERY_SHERD).setWeight(1).setQuality(2))
+                                .add(LootItem.lootTableItem(Items.FLOW_POTTERY_SHERD).setWeight(1).setQuality(2))
+                                .add(LootItem.lootTableItem(Items.PLENTY_POTTERY_SHERD).setWeight(1).setQuality(2))
                         )
         );
 
@@ -283,6 +303,7 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
         biConsumer.accept(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "gravel_sifting_junk_table")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
+                                .add(LootItem.lootTableItem(Items.FLINT).setWeight(4))
                                 .add(LootItem.lootTableItem(Items.SULFUR_SPIKE).setWeight(3))
                                 .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD).setWeight(1).setQuality(2))
                                 .add(LootItem.lootTableItem(Items.COAL).setWeight(2))
@@ -398,6 +419,7 @@ public class GaGLootTableSubProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(Items.AMETHYST_SHARD).setWeight(2))
                                 .add(LootItem.lootTableItem(Items.SKELETON_SKULL).setWeight(1).setQuality(2))
                                 .add(LootItem.lootTableItem(Items.SKULL_POTTERY_SHERD).setWeight(1).setQuality(2))
+                                .add(LootItem.lootTableItem(ItemRegistry.DELFTWARE_SHERD).setWeight(1).setQuality(2))
                                 .add(LootItem.lootTableItem(BlockRegistry.ALEX_FIGURINE.get()).setWeight(1).setQuality(2))
                                 .add(LootItem.lootTableItem(BlockRegistry.STEVE_FIGURINE.get()).setWeight(1).setQuality(2))
                                 .add(LootItem.lootTableItem(BlockRegistry.BLACK_CAT_FIGURINE.get()).setWeight(1).setQuality(2))

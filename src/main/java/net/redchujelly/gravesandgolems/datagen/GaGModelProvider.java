@@ -227,6 +227,10 @@ public class GaGModelProvider extends ModelProvider {
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_POT_TALL.get(), "delftware_pot_tall");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_TEAPOT.get(), "delftware_teapot");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_VASE.get(), "delftware_vase");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.HEADSTONE_1.get(), "grave_1");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.HEADSTONE_2.get(), "grave_2");
+        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.HEADSTONE_3.get(), "grave_3");
+        registerCustomModelBlock(blockModels, itemModels, BlockRegistry.DISPLAY_CASE.get(), "display_case");
 
         blockModels.blockStateOutput.accept(
                 MultiPartGenerator.multiPart(BlockRegistry.SCREENING_TABLE.get())
@@ -241,53 +245,6 @@ public class GaGModelProvider extends ModelProvider {
                         .with(condition().term(WeatheringScreeningTableBlock.WEATHERING, WeatheringScreeningTableBlock.WeatheringStage.EXPOSED), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/exposed_copper_screening_table")))
                         .with(condition().term(WeatheringScreeningTableBlock.WEATHERING, WeatheringScreeningTableBlock.WeatheringStage.WEATHERED), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/weathered_copper_screening_table")))
                         .with(condition().term(WeatheringScreeningTableBlock.WEATHERING, WeatheringScreeningTableBlock.WeatheringStage.OXIDIZED), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/oxidized_copper_screening_table"))));
-
-//        blockModels.blockStateOutput.accept(
-//                MultiPartGenerator.multiPart(BlockRegistry.WAXED_COPPER_SCREENING_TABLE.get())
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/sifting_particles")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/copper_screening_table")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, false), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/copper_screening_table"))));
-//
-//        blockModels.blockStateOutput.accept(
-//                MultiPartGenerator.multiPart(BlockRegistry.EXPOSED_COPPER_SCREENING_TABLE.get())
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/sifting_particles")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/exposed_copper_screening_table")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, false), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/exposed_copper_screening_table"))));
-//
-//        blockModels.blockStateOutput.accept(
-//                MultiPartGenerator.multiPart(BlockRegistry.WAXED_EXPOSED_COPPER_SCREENING_TABLE.get())
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/sifting_particles")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/exposed_copper_screening_table")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, false), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/exposed_copper_screening_table"))));
-//
-//        blockModels.blockStateOutput.accept(
-//                MultiPartGenerator.multiPart(BlockRegistry.WEATHERED_COPPER_SCREENING_TABLE.get())
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/sifting_particles")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/weathered_copper_screening_table")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, false), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/weathered_copper_screening_table"))));
-//
-//        blockModels.blockStateOutput.accept(
-//                MultiPartGenerator.multiPart(BlockRegistry.WAXED_WEATHERED_COPPER_SCREENING_TABLE.get())
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/sifting_particles")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/weathered_copper_screening_table")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, false), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/weathered_copper_screening_table"))));
-//
-//        blockModels.blockStateOutput.accept(
-//                MultiPartGenerator.multiPart(BlockRegistry.OXIDIZED_COPPER_SCREENING_TABLE.get())
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/sifting_particles")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/oxidized_copper_screening_table")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, false), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/oxidized_copper_screening_table"))));
-//
-//        blockModels.blockStateOutput.accept(
-//                MultiPartGenerator.multiPart(BlockRegistry.WAXED_OXIDIZED_COPPER_SCREENING_TABLE.get())
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/sifting_particles")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, true), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/oxidized_copper_screening_table")))
-//                        .with(condition().term(ScreeningTableBlock.SIFTING, false), plainVariant(Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "block/oxidized_copper_screening_table"))));
-
-//        itemModels.declareCustomModelItem(BlockRegistry.WAXED_COPPER_SCREENING_TABLE.get().asItem());
-//        itemModels.declareCustomModelItem(BlockRegistry.WAXED_EXPOSED_COPPER_SCREENING_TABLE.get().asItem());
-//        itemModels.declareCustomModelItem(BlockRegistry.WAXED_WEATHERED_COPPER_SCREENING_TABLE.get().asItem());
-//        itemModels.declareCustomModelItem(BlockRegistry.WAXED_OXIDIZED_COPPER_SCREENING_TABLE.get().asItem());
 
         MultiVariant floorFireModels = blockModels.createFloorFireModels(BlockRegistry.CURSED_FIRE.get());
         MultiVariant sideFireModels = blockModels.createSideFireModels(BlockRegistry.CURSED_FIRE.get());
@@ -316,6 +273,6 @@ public class GaGModelProvider extends ModelProvider {
         Identifier modelLoc = modLocation("block/" + name);
         MultiVariant model = plainVariant(modelLoc);
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, model));
-        itemModels.declareCustomModelItem(block.asItem());
+        itemModels.generateFlatItem(block.asItem(), ModelTemplates.FLAT_ITEM);
     }
 }

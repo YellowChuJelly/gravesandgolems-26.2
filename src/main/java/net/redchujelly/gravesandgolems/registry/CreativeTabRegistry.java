@@ -23,6 +23,9 @@ public class CreativeTabRegistry {
                 output.accept(BlockRegistry.BONE_PILE.get());
                 output.accept(BlockRegistry.SUSPICIOUS_BONE_PILE.get());
                 output.accept(BlockRegistry.CATACOMB_WALL.get());
+                output.accept(BlockRegistry.HEADSTONE_1.get());
+                output.accept(BlockRegistry.HEADSTONE_2.get());
+                output.accept(BlockRegistry.HEADSTONE_3.get());
                 output.accept(BlockRegistry.GRAVE_DIRT.get());
                 output.accept(BlockRegistry.SUSPICIOUS_GRAVE_DIRT.get());
                 output.accept(BlockRegistry.SEA_SILK_BLOCK.get());
@@ -34,6 +37,7 @@ public class CreativeTabRegistry {
                 output.accept(BlockRegistry.RED_VELVET_BLOCK.get());
                 output.accept(BlockRegistry.RED_VELVET_CURTAIN.get());
                 output.accept(BlockRegistry.GILDED_RED_VELVET_CURTAIN.get());
+                output.accept(BlockRegistry.DISPLAY_CASE.get());
                 output.accept(BlockRegistry.ALEX_FIGURINE.get());
                 output.accept(BlockRegistry.STEVE_FIGURINE.get());
                 output.accept(BlockRegistry.BLACK_CAT_FIGURINE.get());

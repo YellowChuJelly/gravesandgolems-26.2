@@ -6,6 +6,11 @@
 		"0": "gravesandgolems:block/display_case",
 		"particle": "gravesandgolems:block/display_case"
 	},
+
+	"transform": {
+		"origin": "center",
+		"translation": [ 0, 1, 0 ]
+	},
 	"elements": [
 		{
 			"from": [0, -16, 0],

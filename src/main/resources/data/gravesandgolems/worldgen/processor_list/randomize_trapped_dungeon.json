@@ -1,0 +1,71 @@
+{  "processors": [
+  {
+    "processor_type": "minecraft:rule",
+    "rules": [
+      {
+        "input_predicate": {
+          "block": "gravesandgolems:grave_dirt",
+          "probability": 0.05,
+          "predicate_type": "minecraft:random_block_match"
+        },
+        "location_predicate": {
+          "predicate_type": "minecraft:always_true"
+        },
+        "output_state": {
+          "Name": "gravesandgolems:suspicious_grave_dirt"
+        },
+        "block_entity_modifier": {
+          "type": "minecraft:append_loot",
+          "loot_table": "gravesandgolems:suspicious_grave_dirt_loot_table_test"
+        }
+      },
+      {
+        "input_predicate": {
+          "block": "gravesandgolems:bone_pile",
+          "probability": 0.05,
+          "predicate_type": "minecraft:random_block_match"
+        },
+        "location_predicate": {
+          "predicate_type": "minecraft:always_true"
+        },
+        "output_state": {
+          "Name": "gravesandgolems:suspicious_bone_pile"
+        },
+        "block_entity_modifier": {
+          "type": "minecraft:append_loot",
+          "loot_table": "gravesandgolems:suspicious_bone_pile_loot_table"
+        }
+      },
+      {
+        "input_predicate": {
+          "block": "gravesandgolems:grave_dirt",
+          "probability": 0.1,
+          "predicate_type": "minecraft:random_block_match"
+        },
+        "location_predicate": {
+          "predicate_type": "minecraft:always_true"
+        },
+        "output_state": {
+          "Name": "gravesandgolems:bone_pile",
+          "Properties": {
+            "lit":false
+          }
+        }
+      },
+      {
+        "input_predicate": {
+          "block": "minecraft:stone_bricks",
+          "probability": 0.25,
+          "predicate_type": "minecraft:random_block_match"
+        },
+        "location_predicate": {
+          "predicate_type": "minecraft:always_true"
+        },
+        "output_state": {
+          "Name": "minecraft:cracked_stone_bricks"
+        }
+      }
+    ]
+  }
+]
+}

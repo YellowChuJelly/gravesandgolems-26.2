@@ -2,8 +2,8 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "grave_1",
-		"particle": "grave_1"
+		"0": "gravesandgolems:block/grave_1",
+		"particle": "gravesandgolems:block/grave_1"
 	},
 	"elements": [
 		{

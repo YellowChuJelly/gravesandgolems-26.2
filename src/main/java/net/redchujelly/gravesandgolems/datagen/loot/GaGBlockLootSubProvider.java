@@ -81,13 +81,10 @@ public class GaGBlockLootSubProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.DELFTWARE_TILE.get());
         this.dropSelf(BlockRegistry.DELFTWARE_FLOORING.get());
         this.dropSelf(BlockRegistry.COPPER_SCREENING_TABLE.get());
-//        this.dropSelf(BlockRegistry.WAXED_COPPER_SCREENING_TABLE.get());
-//        this.dropSelf(BlockRegistry.EXPOSED_COPPER_SCREENING_TABLE.get());
-//        this.dropSelf(BlockRegistry.WAXED_EXPOSED_COPPER_SCREENING_TABLE.get());
-//        this.dropSelf(BlockRegistry.WEATHERED_COPPER_SCREENING_TABLE.get());
-//        this.dropSelf(BlockRegistry.WAXED_WEATHERED_COPPER_SCREENING_TABLE.get());
-//        this.dropSelf(BlockRegistry.OXIDIZED_COPPER_SCREENING_TABLE.get());
-//        this.dropSelf(BlockRegistry.WAXED_OXIDIZED_COPPER_SCREENING_TABLE.get());
+        this.dropSelf(BlockRegistry.DISPLAY_CASE.get());
+        this.dropSelf(BlockRegistry.HEADSTONE_1.get());
+        this.dropSelf(BlockRegistry.HEADSTONE_2.get());
+        this.dropSelf(BlockRegistry.HEADSTONE_3.get());
 
         this.add(BlockRegistry.SUSPICIOUS_BONE_PILE.get(), noDrop());
         this.add(BlockRegistry.SUSPICIOUS_GRAVE_DIRT.get(), noDrop());

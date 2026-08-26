@@ -97,7 +97,7 @@
           },
           "block_entity_modifier": {
             "type": "minecraft:append_loot",
-            "loot_table": "gravesandgolems:suspicious_bone_pile_loot_table"
+            "loot_table": "gravesandgolems:suspicious_gravel_pottery_foundation_loot_table"
           }
         }
       ]

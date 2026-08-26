@@ -35,6 +35,9 @@ public class GaGBlockTagsProvider extends BlockTagsProvider {
                 .add(BlockRegistry.GRAVE_DIRT.getKey())
                 .add(BlockRegistry.SUSPICIOUS_GRAVE_DIRT.getKey());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(BlockRegistry.HEADSTONE_1.getKey())
+                .add(BlockRegistry.HEADSTONE_2.getKey())
+                .add(BlockRegistry.HEADSTONE_3.getKey())
                 .add(BlockRegistry.DIRT_BUCKET.getKey())
                 .add(BlockRegistry.SOIL_BUCKET.getKey())
                 .add(BlockRegistry.CATACOMB_WALL.getKey())
@@ -45,7 +48,8 @@ public class GaGBlockTagsProvider extends BlockTagsProvider {
                 .add(BlockRegistry.DELFTWARE_TILE.getKey())
                 .add(BlockRegistry.DELFTWARE_FLOORING.getKey());
         this.tag(BlockTags.MINEABLE_WITH_AXE)
-                .add(BlockRegistry.SCREENING_TABLE.getKey());
+                .add(BlockRegistry.SCREENING_TABLE.getKey())
+                .add(BlockRegistry.DISPLAY_CASE.getKey());
         this.tag(BlockTags.WOOL)
                 .add(BlockRegistry.SEA_SILK_BLOCK.getKey())
                 .add(BlockRegistry.SEA_SILK_FABRIC_BLOCK.getKey())
@@ -60,6 +64,5 @@ public class GaGBlockTagsProvider extends BlockTagsProvider {
                 .add(BlockRegistry.GILDED_RED_VELVET_CURTAIN.getKey())
                 .add(BlockRegistry.RED_VELVET_CURTAIN.getKey())
                 .add(BlockRegistry.SEA_SILK_CURTAIN.getKey());
-
     }
 }
