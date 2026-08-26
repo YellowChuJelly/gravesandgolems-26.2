@@ -37,6 +37,14 @@ public class GaGRecipeProvider extends RecipeProvider {
                 .define('s', ItemRegistry.SEA_SILK_FABRIC)
                 .unlockedBy("has_sea_silk", this.has(ItemRegistry.SEA_SILK.get()))
                 .save(this.output);
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.TOOLS, ItemRegistry.TROWEL)
+                .pattern(" ii")
+                .pattern(" si")
+                .pattern("s  ")
+                .define('i', Tags.Items.INGOTS_IRON)
+                .define('s', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_iron_ingot", this.has(Tags.Items.INGOTS_IRON))
+                .save(this.output);
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, ItemRegistry.SEA_SILK_FABRIC)
                 .pattern("sss")
                 .define('s', ItemRegistry.SEA_SILK)
@@ -124,7 +132,7 @@ public class GaGRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, BlockRegistry.DELFTWARE_TILE, 4)
                 .pattern("ss")
                 .pattern("ss")
-                .define('s', BlockRegistry.DELFTWARE_TILE)
+                .define('s', ItemRegistry.DELFTWARE_SHERD)
                 .unlockedBy("has_delftware_sherd", this.has(ItemRegistry.DELFTWARE_SHERD))
                 .save(this.output);
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, BlockRegistry.DELFTWARE_FLOORING, 4)
@@ -134,13 +142,20 @@ public class GaGRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_delftware_sherd", this.has(BlockRegistry.DELFTWARE_TILE))
                 .save(this.output);
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.TOOLS, BlockRegistry.DIRT_BUCKET)
-                .pattern("sis")
+                .pattern("s s")
                 .pattern("sbs")
                 .pattern("sss")
-                .define('s', Blocks.CONCRETE.blue())
-                .define('i', Tags.Items.INGOTS_IRON)
+                .define('s', Blocks.TUBE_CORAL)
                 .define('b', Tags.Items.BUCKETS)
-                .unlockedBy("has_delftware_sherd", this.has(BlockRegistry.DELFTWARE_TILE))
+                .unlockedBy("has_bucket", this.has(Items.BUCKET))
+                .save(this.output);
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.TOOLS, BlockRegistry.SOIL_BUCKET)
+                .pattern("s s")
+                .pattern("sbs")
+                .pattern("sss")
+                .define('s', Blocks.RESIN_CLUMP)
+                .define('b', Tags.Items.BUCKETS)
+                .unlockedBy("has_bucket", this.has(Items.BUCKET))
                 .save(this.output);
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, BlockRegistry.DISPLAY_CASE)
                 .pattern("ppp")
