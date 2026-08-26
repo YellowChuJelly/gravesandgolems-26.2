@@ -10,7 +10,7 @@ public class GolemEntityRenderer extends MobRenderer<GolemEntity, LivingEntityRe
     private static final Identifier TEXTURE_LOCATION = Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "textures/entity/golem.png");
 
     public GolemEntityRenderer(EntityRendererProvider.Context context) {
-        super(context, new GolemEntityModel(context.bakeLayer(GolemEntityModel.LAYER_LOCATION)), 1.0f);
+        super(context, new GolemEntityModel(context.bakeLayer(GolemEntityModel.LAYER_LOCATION)), 0.4f);
     }
 
     @Override

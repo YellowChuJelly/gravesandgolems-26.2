@@ -35,36 +35,30 @@ public class GolemEntityModel extends EntityModel<LivingEntityRenderState> {
 		this.leftarm = this.body.getChild("leftarm");
 	}
 
+
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition main = partdefinition.addOrReplaceChild("main", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition main = partdefinition.addOrReplaceChild("main", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 24.0F, 0.0F, 0.0F, 3.1416F, 0.0F));
 
-		PartDefinition body = main.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 55).addBox(-11.0F, -31.0F, -8.0F, 24.0F, 14.0F, 15.0F, new CubeDeformation(0.0F))
-				.texOffs(0, 143).addBox(-12.0F, -28.0F, -9.0F, 26.0F, 7.0F, 17.0F, new CubeDeformation(0.0F))
-				.texOffs(0, 0).addBox(-15.0F, -47.0F, -10.0F, 30.0F, 16.0F, 20.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition body = main.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 14).addBox(-4.0F, -3.5F, -3.0F, 8.0F, 7.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -9.5F, 0.0F));
 
-		PartDefinition head = body.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(2.0F, -48.0F, 0.0F));
+		PartDefinition head = body.addOrReplaceChild("head", CubeListBuilder.create().texOffs(24, 4).addBox(4.0F, -4.5F, 0.0F, 4.0F, 4.0F, 0.0F, new CubeDeformation(0.0F))
+				.texOffs(24, 4).mirror().addBox(-8.0F, -4.5F, 0.0F, 4.0F, 4.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false)
+				.texOffs(0, 0).addBox(-4.0F, -5.0F, -4.0F, 8.0F, 6.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -4.5F, 0.0F));
 
-		PartDefinition cube_r1 = head.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 83).addBox(-8.5F, -8.5F, -6.5F, 12.0F, 11.0F, 13.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 4.5F, -1.0F, 0.0F, 0.0F, 0.7854F));
+		PartDefinition rightarm = body.addOrReplaceChild("rightarm", CubeListBuilder.create().texOffs(0, 27).mirror().addBox(-2.0F, -2.0F, -2.0F, 4.0F, 11.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-6.0F, -2.5F, 0.0F));
 
-		PartDefinition rightarm = body.addOrReplaceChild("rightarm", CubeListBuilder.create().texOffs(79, 55).addBox(-13.0F, -12.0F, -9.0F, 17.0F, 13.0F, 15.0F, new CubeDeformation(0.0F))
-				.texOffs(113, 80).addBox(-13.0F, 1.0F, -6.0F, 9.0F, 17.0F, 11.0F, new CubeDeformation(0.0F))
-				.texOffs(58, 109).addBox(-12.0F, 18.0F, -5.0F, 8.0F, 14.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(-11.0F, -43.0F, 0.0F));
+		PartDefinition rightleg = body.addOrReplaceChild("rightleg", CubeListBuilder.create().texOffs(16, 27).addBox(-2.0F, -1.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, 4.5F, 0.0F));
 
-		PartDefinition rightleg = body.addOrReplaceChild("rightleg", CubeListBuilder.create().texOffs(26, 112).addBox(-4.0F, 3.0F, -4.0F, 7.0F, 13.0F, 7.0F, new CubeDeformation(0.0F))
-				.texOffs(26, 132).addBox(-3.0F, -2.0F, -3.0F, 6.0F, 6.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-7.0F, -16.0F, 0.0F));
+		PartDefinition leftarm = body.addOrReplaceChild("leftarm", CubeListBuilder.create().texOffs(0, 27).addBox(-2.0F, -2.0F, -2.0F, 4.0F, 11.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(6.0F, -2.5F, 0.0F));
 
-		PartDefinition leftleg = body.addOrReplaceChild("leftleg", CubeListBuilder.create().texOffs(94, 129).addBox(-4.0F, 8.0F, -4.0F, 7.0F, 9.0F, 7.0F, new CubeDeformation(0.0F))
-				.texOffs(121, 129).addBox(-4.0F, -1.0F, -3.0F, 6.0F, 10.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(9.0F, -17.0F, 0.0F));
+		PartDefinition leftleg = body.addOrReplaceChild("leftleg", CubeListBuilder.create().texOffs(16, 27).mirror().addBox(-2.0F, -1.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(2.0F, 4.5F, 0.0F));
 
-		PartDefinition leftarm = body.addOrReplaceChild("leftarm", CubeListBuilder.create().texOffs(96, 23).addBox(-2.0F, -13.0F, -6.0F, 12.0F, 17.0F, 10.0F, new CubeDeformation(0.0F))
-				.texOffs(0, 112).addBox(4.0F, 4.0F, -5.0F, 6.0F, 23.0F, 7.0F, new CubeDeformation(0.0F))
-				.texOffs(94, 109).addBox(1.0F, 27.0F, -7.0F, 9.0F, 10.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(14.0F, -39.0F, 0.0F));
-
-		return LayerDefinition.create(meshdefinition, 256, 256);
+		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
+
 
 	@Override
 	public void setupAnim(LivingEntityRenderState state) {
@@ -77,6 +71,8 @@ public class GolemEntityModel extends EntityModel<LivingEntityRenderState> {
 		float speed = state.walkAnimationSpeed;
 		this.rightleg.xRot = Mth.cos(walk * 0.662F) * 1.4F * speed;
 		this.leftleg.xRot = Mth.cos(walk * 0.662F + (float) Math.PI) * 1.4F * speed;
+		this.leftarm.xRot = Mth.cos(walk * 0.662F) * 1.4F * speed;
+		this.rightarm.xRot = Mth.cos(walk * 0.662F + (float) Math.PI) * 1.4F * speed;
 	}
 
 	public ModelPart getHead() {

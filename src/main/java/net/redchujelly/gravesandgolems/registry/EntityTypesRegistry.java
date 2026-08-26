@@ -24,8 +24,8 @@ public class EntityTypesRegistry {
     public static final Supplier<EntityType<GolemEntity>> GOLEM = ENTITY_TYPES.register(
             "golem",
             () -> EntityType.Builder.of(GolemEntity::new, MobCategory.MISC)
-                    .sized(2.0f, 4.0f)
-                    .eyeHeight(3.8f)
+                    .sized(0.8f, 1.0f)
+                    .eyeHeight(1.0f)
                     .fireImmune()
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(GravesAndGolems.MODID, "golem")))
     );
