@@ -4,6 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -140,6 +141,14 @@ public class GaGRecipeProvider extends RecipeProvider {
                 .define('i', Tags.Items.INGOTS_IRON)
                 .define('b', Tags.Items.BUCKETS)
                 .unlockedBy("has_delftware_sherd", this.has(BlockRegistry.DELFTWARE_TILE))
+                .save(this.output);
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, BlockRegistry.DISPLAY_CASE)
+                .pattern("ppp")
+                .pattern("p p")
+                .pattern("www")
+                .define('p', Blocks.GLASS_PANE)
+                .define('w', ItemTags.PLANKS)
+                .unlockedBy("has_glass", this.has(Blocks.GLASS))
                 .save(this.output);
 
         twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, BlockRegistry.SEA_SILK_FABRIC_BLOCK, ItemRegistry.SEA_SILK_FABRIC);
