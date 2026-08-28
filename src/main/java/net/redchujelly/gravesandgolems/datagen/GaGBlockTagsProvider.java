@@ -35,6 +35,8 @@ public class GaGBlockTagsProvider extends BlockTagsProvider {
                 .add(BlockRegistry.GRAVE_DIRT.getKey())
                 .add(BlockRegistry.SUSPICIOUS_GRAVE_DIRT.getKey());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(BlockRegistry.BONE_PILE.getKey())
+                .add(BlockRegistry.SUSPICIOUS_BONE_PILE.getKey())
                 .add(BlockRegistry.HEADSTONE_1.getKey())
                 .add(BlockRegistry.HEADSTONE_2.getKey())
                 .add(BlockRegistry.HEADSTONE_3.getKey())
