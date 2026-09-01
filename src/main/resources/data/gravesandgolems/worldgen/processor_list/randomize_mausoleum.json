@@ -105,6 +105,40 @@
               "west": "none"
             }
           }
+        },
+        {
+          "input_predicate": {
+            "block": "gravesandgolems:grave_1",
+            "probability": 0.667,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "gravesandgolems:grave_2",
+            "Properties": {
+              "facing": "south",
+              "waterlogged": false
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "gravesandgolems:grave_2",
+            "probability": 0.5,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "gravesandgolems:grave_3",
+            "Properties": {
+              "facing": "south",
+              "waterlogged": false
+            }
+          }
         }
       ]
     },

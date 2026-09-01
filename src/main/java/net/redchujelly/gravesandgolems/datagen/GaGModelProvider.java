@@ -227,9 +227,9 @@ public class GaGModelProvider extends ModelProvider {
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_POT_TALL.get(), "delftware_pot_tall");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_TEAPOT.get(), "delftware_teapot");
         registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.DELFTWARE_VASE.get(), "delftware_vase");
-        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.HEADSTONE_1.get(), "grave_1");
-        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.HEADSTONE_2.get(), "grave_2");
-        registerCustomModelDirectionalBlock(blockModels, itemModels, BlockRegistry.HEADSTONE_3.get(), "grave_3");
+        registerCustomModelDirectionalBlockNoSprite(blockModels, itemModels, BlockRegistry.HEADSTONE_1.get(), "grave_1");
+        registerCustomModelDirectionalBlockNoSprite(blockModels, itemModels, BlockRegistry.HEADSTONE_2.get(), "grave_2");
+        registerCustomModelDirectionalBlockNoSprite(blockModels, itemModels, BlockRegistry.HEADSTONE_3.get(), "grave_3");
         registerCustomModelBlock(blockModels, itemModels, BlockRegistry.DISPLAY_CASE.get(), "display_case");
 
         blockModels.blockStateOutput.accept(
@@ -268,6 +268,12 @@ public class GaGModelProvider extends ModelProvider {
         MultiVariant model = plainVariant(modelLoc);
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, model).with(ROTATION_HORIZONTAL_FACING));
         itemModels.generateFlatItem(block.asItem(), ModelTemplates.FLAT_ITEM);
+    }
+    private void registerCustomModelDirectionalBlockNoSprite(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block, String name){
+        Identifier modelLoc = modLocation("block/" + name);
+        MultiVariant model = plainVariant(modelLoc);
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, model).with(ROTATION_HORIZONTAL_FACING));
+        blockModels.registerSimpleItemModel(block, modelLoc);
     }
     private void registerCustomModelBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block, String name){
         Identifier modelLoc = modLocation("block/" + name);

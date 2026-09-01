@@ -76,11 +76,11 @@ public class BlockRegistry {
 
     //HEADSTONES
     public static final DeferredBlock<Block> HEADSTONE_1 = registerBlock("grave_1",
-            properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+            properties -> new FlatHeadstoneBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
     public static final DeferredBlock<Block> HEADSTONE_2 = registerBlock("grave_2",
-            properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+            properties -> new RoundHeadstoneBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
     public static final DeferredBlock<Block> HEADSTONE_3 = registerBlock("grave_3",
-            properties -> new SmallHorizontalBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
+            properties -> new CrossHeadstoneBlock(properties.strength(1.5f).sound(SoundType.DRIPSTONE_BLOCK)));
 
     //DELFTWARE DECO
     public static final DeferredBlock<Block> DELFTWARE_BOWL = registerBlock("delftware_bowl",

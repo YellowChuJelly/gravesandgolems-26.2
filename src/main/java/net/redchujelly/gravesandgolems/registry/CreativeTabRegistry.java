@@ -11,7 +11,7 @@ import net.redchujelly.gravesandgolems.GravesAndGolems;
 public class CreativeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GravesAndGolems.MODID);
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("graves_and_golems_tab", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> DEFAULT_TAB = CREATIVE_MODE_TABS.register("graves_and_golems_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.gravesandgolems"))
             .icon(() -> ItemRegistry.TROWEL.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
@@ -23,9 +23,9 @@ public class CreativeTabRegistry {
                 output.accept(BlockRegistry.BONE_PILE.get());
                 output.accept(BlockRegistry.SUSPICIOUS_BONE_PILE.get());
                 output.accept(BlockRegistry.CATACOMB_WALL.get());
-//                output.accept(BlockRegistry.HEADSTONE_1.get());
-//                output.accept(BlockRegistry.HEADSTONE_2.get());
-//                output.accept(BlockRegistry.HEADSTONE_3.get());
+                output.accept(BlockRegistry.HEADSTONE_1.get());
+                output.accept(BlockRegistry.HEADSTONE_2.get());
+                output.accept(BlockRegistry.HEADSTONE_3.get());
                 output.accept(BlockRegistry.GRAVE_DIRT.get());
                 output.accept(BlockRegistry.SUSPICIOUS_GRAVE_DIRT.get());
                 output.accept(BlockRegistry.SEA_SILK_BLOCK.get());

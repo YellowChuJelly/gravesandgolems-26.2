@@ -27,6 +27,9 @@
   "block.gravesandgolems.delftware_vase": "Delftware Vase",
   "block.gravesandgolems.delftware_tile": "Delftware Tile",
   "block.gravesandgolems.delftware_flooring": "Delftware Flooring",
+  "block.gravesandgolems.grave_1": "Plain Grave",
+  "block.gravesandgolems.grave_2": "Rounded Grave",
+  "block.gravesandgolems.grave_3": "Cross Grave",
 
   "item.gravesandgolems.sea_silk": "Sea Silk Fiber",
   "item.gravesandgolems.sea_silk_fabric": "Sea Silk",
