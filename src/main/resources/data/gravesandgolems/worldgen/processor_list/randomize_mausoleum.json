@@ -109,7 +109,7 @@
         {
           "input_predicate": {
             "block": "gravesandgolems:grave_1",
-            "probability": 0.667,
+            "probability": 0.333,
             "predicate_type": "minecraft:random_block_match"
           },
           "location_predicate": {
@@ -125,7 +125,7 @@
         },
         {
           "input_predicate": {
-            "block": "gravesandgolems:grave_2",
+            "block": "gravesandgolems:grave_1",
             "probability": 0.5,
             "predicate_type": "minecraft:random_block_match"
           },
